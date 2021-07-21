@@ -1,0 +1,135 @@
+@prefix od: <http://data.odeuropa.eu/ontology/> .
+@prefix crm: <http://erlangen-crm.org/current/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/> .
+@base <http://data.odeuropa.eu/ontology> .
+
+<http://data.odeuropa.eu/ontology> rdf:type owl:Ontology ;
+                                    owl:imports crm: .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.odeuropa.eu/ontology/carrier
+od:carrier rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf crm:P12_occurred_in_the_presence_of ;
+           rdfs:domain od:Stimulus_Generation ;
+           rdfs:range crmsci:S10_Material_Substantial .
+
+
+###  http://data.odeuropa.eu/ontology/evoked
+od:evoked rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf crm:P15_was_influenced_by ;
+          rdfs:domain od:Sensorial_Experience .
+
+
+###  http://data.odeuropa.eu/ontology/generated
+od:generated rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf crm:P92_brought_into_existence ;
+             rdfs:domain od:Stimulus_Generation ;
+             rdfs:range od:Sensorial_Stimulus .
+
+
+###  http://data.odeuropa.eu/ontology/has_nose_quality
+od:has_nose_quality rdf:type owl:ObjectProperty ;
+                    rdfs:domain crm:E39_Actor ;
+                    rdfs:range crm:E55_Type .
+
+
+###  http://data.odeuropa.eu/ontology/has_species
+od:has_species rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf crm:P137_exemplifies ;
+               rdfs:domain od:Animal ;
+               rdfs:range crm:E55_Type .
+
+
+###  http://data.odeuropa.eu/ontology/involved_gesture
+od:involved_gesture rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf crm:P9_consists_of ;
+                    rdfs:domain crm:E7_Activity ;
+                    rdfs:range od:Gesture .
+
+
+###  http://data.odeuropa.eu/ontology/perceived
+od:perceived rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf crmsci:O8_observed ;
+             rdfs:domain od:Sensorial_Experience ;
+             rdfs:range od:Sensorial_Stimulus .
+
+
+###  http://data.odeuropa.eu/ontology/source
+od:source rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf crm:P12_occurred_in_the_presence_of ;
+          rdfs:domain od:Stimulus_Generation ;
+          rdfs:range crmsci:S10_Material_Substantial .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data.odeuropa.eu/ontology/Animal
+od:Animal rdf:type owl:Class ;
+          rdfs:subClassOf crm:E39_Actor .
+
+
+###  http://data.odeuropa.eu/ontology/Gesture
+od:Gesture rdf:type owl:Class ;
+           rdfs:subClassOf crm:E7_Activity .
+
+
+###  http://data.odeuropa.eu/ontology/Olfactory_Experience
+od:Olfactory_Experience rdf:type owl:Class ;
+                        rdfs:subClassOf od:Sensorial_Experience .
+
+
+###  http://data.odeuropa.eu/ontology/Sensorial_Experience
+od:Sensorial_Experience rdf:type owl:Class ;
+                        rdfs:subClassOf crmsci:S4_Observation .
+
+
+###  http://data.odeuropa.eu/ontology/Sensorial_Stimulus
+od:Sensorial_Stimulus rdf:type owl:Class ;
+                      rdfs:subClassOf crm:E70_Thing ,
+                                      crmsci:S15_Observable_Entity .
+
+
+###  http://data.odeuropa.eu/ontology/Smell
+od:Smell rdf:type owl:Class ;
+         rdfs:subClassOf od:Sensorial_Stimulus .
+
+
+###  http://data.odeuropa.eu/ontology/Smell_Emission
+od:Smell_Emission rdf:type owl:Class ;
+                  rdfs:subClassOf od:Stimulus_Generation .
+
+
+###  http://data.odeuropa.eu/ontology/Smell_Interaction
+od:Smell_Interaction rdf:type owl:Class ;
+                     rdfs:subClassOf od:Smell_Transformation ,
+                                     od:Stimuli_Interaction .
+
+
+###  http://data.odeuropa.eu/ontology/Smell_Transformation
+od:Smell_Transformation rdf:type owl:Class ;
+                        rdfs:subClassOf od:Stimuli_Transformation .
+
+
+###  http://data.odeuropa.eu/ontology/Stimuli_Interaction
+od:Stimuli_Interaction rdf:type owl:Class ;
+                       rdfs:subClassOf od:Stimuli_Transformation .
+
+
+###  http://data.odeuropa.eu/ontology/Stimuli_Transformation
+od:Stimuli_Transformation rdf:type owl:Class ;
+                          rdfs:subClassOf crm:E81_Transformation .
+
+
+###  http://data.odeuropa.eu/ontology/Stimulus_Generation
+od:Stimulus_Generation rdf:type owl:Class ;
+                       rdfs:subClassOf crm:E63_Beginning_of_Existence .
