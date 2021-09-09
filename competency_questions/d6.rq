@@ -1,0 +1,16 @@
+PREFIX od:    <http://data.odeuropa.org/ontology/>
+PREFIX crm:   <http://erlangen-crm.org/current/>
+PREFIX time:  <http://www.w3.org/2006/time#>
+PREFIX reo:  <https://read-it.acc.hum.uu.nl/ontology#>
+
+# How were memories preserved through smell [commemoration]?
+
+SELECT ?source ?memory
+WHERE {
+  ?emission od:F4_had_source / crm:P137_exemplifies ?source ;
+            crm:P10_falls_within / crm:P2_has_type "commemoration" ;
+            od:P1_generated ?smell .
+
+  ?experience od:F2_perceived ?smell ;
+              od:evoked ?memory .
+}
