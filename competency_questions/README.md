@@ -7,6 +7,16 @@ Each CQ has been translated in SPARQL, following the Odeuropa model.
 
 > The data model and the ontology are work in progress. Some modification in the query can be made accordingly
 
+|                                                         | n. |
+|---------------------------------------------------------|----|
+| Answerable by the model                                 | 53 |
+| Extension of the model required                         | 9  |
+| More AI needed (e.g. embeddings)                        | 2  |
+| Double check with experts needed                        | 5  |
+| Answerable including external knowledge (e.g. Wikidata) | 2  |
+| TOTAL                                                   | 71 |
+
+
 ## Table of Contents
 * [A. Smells](#a-smells)
 * [B. Noses and Gestures](#b-noses-and-gestures)
@@ -15,7 +25,6 @@ Each CQ has been translated in SPARQL, following the Odeuropa model.
 * [E. Practices](#e-practices)
 * [F. Sites and contexts](#f-sites-and-contexts)
 * [G. Texts and images](#g-texts-and-images)
-
 
 
 ## A. Smells
@@ -141,7 +150,7 @@ _What feelings were associated with smells in parts of Europe at different times
 _What kinds of practices produced smells?_
 
 1. What types of cooking produce a bad smell?  
-[query](./e1.rq) TO IMPROVE
+[query](./e1.rq) TO IMPROVE (e.g. with EMBEDDINGS)
 
 1. What types of cooking are producing [smell, e.g. sweet]?  
 [query](./e2.rq)
@@ -172,37 +181,96 @@ _What kinds of practices produced smells?_
 
 _Which communities, institutions, or spaces were associated with particular smells?_
 
-1. Which smells are associated with [general place e.g. schools, churches, docks, ships]?
-1. Which smells are associated with [specific place e.g. the Amsterdam stock exchange]?
-1. Which smells are associated with [a city e.g. London]?
-1. Which smells are associated with [a region OR country e.g Sussex OR France]?
-1. In which kind of places was possible to perceive [smell source, e.g. incense]?
-1. In which kind of places was possible to perceive [smell, e.g. floreal]?
-1. In which kind of places was possible to perceive both [floreal smells] a [woody smell]?
-1. Which smell was possible to perceive during a [general event, e.g. a war]?
-1. Which smell was possible to perceive during the [specific event, e.g. Crimean War]?
-1. Which kind of event produced an increment of smell experiences?
-1. Which kind of event produced a reduction of smell experiences?
+1. Which smells are associated with [general place e.g. schools, churches, docks, ships]?  
+[query](./f1.rq)
+
+1. Which smells are associated with [specific place e.g. the Amsterdam stock exchange]?  
+[query](./f2.rq)
+
+1. Which smells are associated with [a city e.g. London]?  
+[query](./f3.rq)
+
+1. Which smells are associated with [a region OR country e.g Sussex OR France]?  
+[query](./f4.rq)
+
+1. In which kind of places was possible to perceive [smell source, e.g. incense]?  
+[query](./f5.rq)
+
+1. In which kind of places was possible to perceive [smell, e.g. floreal]?  
+[query](./f6.rq)
+
+1. In which kind of places was possible to perceive both [floreal smells] a [woody smell]?  
+[query](./f7.rq)
+
+1. Which smell was possible to perceive during a [general event, e.g. a war]?  
+[query](./f8.rq) WITH EXTERNAL DATA
+
+1. Which smell was possible to perceive during the [specific event, e.g. Crimean War]?  
+[query](./f9.rq) WITH EXTERNAL DATA
+
+1. Which kind of event produced an increment of smell experiences?  
+[query](./f10.rq) TO CHECK WITH EXPERTS
+
+1. Which kind of event produced a reduction of smell experiences?  
+[query](./f11.rq) TO CHECK WITH EXPERTS
+
 
 ## G. Texts and images
 _How smells are represented in texts and images?_
 
-1. What are the adjectives used for [smell, e.g. orange aroma] in the 15th century?
-1. Which painter was portraying more [smell, e.g. smoky]?
-1. Which country was portraying more [smell, e.g. smoky]?
-1. Which part of the place [town, countryside, maket] is portrayed with the most smell?
-1. In which part of an image [foreground, middleground, background] are smells portrayed?
-1. Which time [century, decade] was portraying more smell?
-1. Which portrayal of a smell [pomander, tobacco] changed [disappeared/faded/developed] over time?
-1. In which text we can find [smell, e.g. citrus]?
-1. What scents are associated with [genre of text]?
-1. What scents are associated with [period of text]?
-1. What scents do [named, country of origin,male/female] author describe most?
-1. In which paintings is [smell, e.g. citrus] present?
-1. Which paintings show [pleasant, unpleasant] smells?
-1. Which kind of reactions to smells are possible to find in [Dutch] paintings of [18th century]?
-1. What sort of people react to smells in paintings?
-1. Which smells are possible to find in paintings of the [Rijksmuseum]?
-1. Which smells are possible to find in paintings whose subject is [field work]?
-1. Which smells are frequently present in paintings but not in texts?
-1. Which smells are frequently present in texts but not in paintings?
+1. What are the adjectives used for [smell, e.g. orange aroma] in the 15th century?  
+[query](./g1.rq)
+
+1. Which painter was portraying more [smell, e.g. smoky]?  
+[query](./g2.rq)
+
+1. Which country was portraying more [smell, e.g. smoky]?  
+[query](./g3.rq) TBD add nationality
+
+1. Which part of the place [town, countryside, maket] is portrayed with the most smell?  
+[query](./g4.rq)
+
+1. In which part of an image [foreground, middleground, background] are smells portrayed?  
+[query](./g5.rq) TBD add where in the pic
+
+1. Which time [century, decade] was portraying more smell?  
+[query](./g6.rq)
+
+1. Which portrayal of a smell [pomander, tobacco] changed [disappeared/faded/developed] over time?  
+[query](./g7.rq) TBD add direct depiction link
+
+1. In which text we can find [smell, e.g. citrus]?  
+[query](./g8.rq)
+
+1. What scents are associated with [genre of text]?  
+[query](./g9.rq)
+
+1. What scents are associated with [period of text]?  
+[query](./g10.rq)
+
+1. What scents do [named, country of origin, male/female] authors describe most?  
+[query](./g11.rq)
+
+1. In which paintings is [smell, e.g. citrus] present?  
+[query](./g12.rq)
+
+1. Which paintings show [pleasant, unpleasant] smells?  
+[query](./g13.rq) TO IMPROVE WITH EMBEDDINGS
+
+1. Which kind of reactions to smells are possible to find in [Dutch] paintings of [18th century]?  
+[query](./g14.rq) TO COMPLETE with nationality
+
+1. What sort of people react to smells in paintings?  
+[query](./g15.rq)
+
+1. Which smells are possible to find in paintings of the [Rijksmuseum]?  
+[query](./g16.rq)
+
+1. Which smells are possible to find in paintings whose subject is [field work]?  
+[query](./g17.rq)
+
+1. Which smells are frequently present in paintings but not in texts?  
+[query](./g18.rq)
+
+1. Which smells are frequently present in texts but not in paintings?  
+[query](./g19.rq)
