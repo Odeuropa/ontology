@@ -3,13 +3,15 @@ PREFIX crm:   <http://erlangen-crm.org/current/>
 PREFIX time:  <http://www.w3.org/2006/time#>
 PREFIX reo:   <https://read-it.acc.hum.uu.nl/ontology#>
 
-# Which practice can modify an existing smell?
+# What smells produced what kinds of practices?
 
-SELECT ?technique ?effect
+SELECT ?source ?practice
 WHERE {
 
   ?transformation a od:L14_Smell_Transformation ;
-        crm:P33_used_specific_technique ?technique .
+        crm:P33_used_specific_technique ?practice
+        crm:P124_transformed ?smell .
 
-  OPTIONAL { ?transformation crm:P2_has_type ?effect }
+  ?emission od:F4_had_source ?source ;
+            od:P1_generated ?smell .
 }

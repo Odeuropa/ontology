@@ -16,7 +16,7 @@ WHERE {
       schema:dateCreated ?time ;
       crm:P67_refers_to ?smell .
 
-    # TODO: Dutch
+  ?author foaf:nationality "Netherlands"
 
   FILTER ( ?time >= "1701"^^xsd:gYear AND ?time <= "1800"^^xsd:gYear )
 }

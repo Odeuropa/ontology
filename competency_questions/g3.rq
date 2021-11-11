@@ -3,9 +3,9 @@ PREFIX crm:   <http://erlangen-crm.org/current/>
 PREFIX time:  <http://www.w3.org/2006/time#>
 PREFIX reo:   <https://read-it.acc.hum.uu.nl/ontology#>
 
-# Which painter was portraying more [smell, e.g. smoky]?
+# Which country was portraying more [smell, e.g. smoky]?
 
-SELECT DISTINCT ?author COUNT(DISTINCT ?smell)
+SELECT DISTINCT ?country COUNT(DISTINCT ?smell)
 WHERE {
   [] crm:E13_Attribute_Assignment;
           crm:P141_assigned <http://data.odeuropa.eu/vocabulary/historic-book/smoky_burnt> ;
@@ -15,6 +15,8 @@ WHERE {
   ?text a crm:E33_Linguistic_Object ;
       schema:author ?author ;
       crm:P67_refers_to ?smell .
+
+  ?author foaf:nationality ?country
 }
-GROUP BY ?author
+GROUP BY ?country
 ORDER BY DESC(COUNT(DISTINCT ?smell))

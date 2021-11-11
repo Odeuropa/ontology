@@ -3,18 +3,18 @@ PREFIX crm:   <http://erlangen-crm.org/current/>
 PREFIX time:  <http://www.w3.org/2006/time#>
 PREFIX reo:   <https://read-it.acc.hum.uu.nl/ontology#>
 
-# What types of cooking produce a bad smell?
+# What was a protective [health] scent in X period?
 
-SELECT ?cooking ?label
+SELECT ?source ?type
 WHERE {
   ?assignment a crm:E13_Attribute_Assignment;
-          crm:P2_has_type "hedonic" ;
-          crm:P141_assigned "disgusting" ;
           crm:P140_assigned_attribute_to ?smell .
 
   ?emission od:F4_had_source / crm:P137_exemplifies ?source ;
-        crm:P10_falls_within ?cooking.
+            od:P1_generated ?smell ;
+            crm:P10_falls_within / crm:P2_has_type ?practice .
 
-  ?cooking crm:P2_has_type "cooking" ;
-        rdfs:label ?label .
+  ?practice crm:P2_has_type ?type
+
+  VALUES ?type {"medicine" "profilaction"}
 }
