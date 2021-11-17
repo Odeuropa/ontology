@@ -7,14 +7,11 @@ PREFIX reo:   <https://read-it.acc.hum.uu.nl/ontology#>
 
 SELECT ?source ?type
 WHERE {
-  ?assignment a crm:E13_Attribute_Assignment;
-          crm:P140_assigned_attribute_to ?smell .
-
   ?emission od:F4_had_source / crm:P137_exemplifies ?source ;
-            od:P1_generated ?smell ;
-            crm:P10_falls_within / crm:P2_has_type ?practice .
+            od:P1_generated ?smell .
 
-  ?practice crm:P2_has_type ?type
+  ?odorizing od:F9_involved_smell ?smell;
+        crm:P21_had_general_purpose ?type .
 
   VALUES ?type {"medicine" "profilaction"}
 }

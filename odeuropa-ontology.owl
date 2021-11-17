@@ -17,6 +17,18 @@
 #    Object Properties
 #################################################################
 
+###  http://data.odeuropa.eu/ontology/F10_targeted
+od:F10_targeted rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf crm:P16_used_specific_object ;
+                rdfs:domain od:L16_Odorizing .
+
+
+###  http://data.odeuropa.eu/ontology/F9_involved_smell
+od:F9_involved_smell rdf:type owl:ObjectProperty ;
+                     rdfs:domain od:L16_Odorizing ;
+                     rdfs:range od:L11_Smell .
+
+
 ###  http://data.odeuropa.eu/ontology/L1_generated
 od:L1_generated rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf crm:P92_brought_into_existence ;
@@ -106,6 +118,11 @@ od:L14_Smell_Transformation rdf:type owl:Class ;
 od:L15_Smell_Interaction rdf:type owl:Class ;
                          rdfs:subClassOf od:L14_Smell_Transformation ,
                                          od:L5_Stimuli_Interaction .
+
+
+###  http://data.odeuropa.eu/ontology/L16_Odorizing
+od:L16_Odorizing rdf:type owl:Class ;
+                 rdfs:subClassOf crm:E7_Activity .
 
 
 ###  http://data.odeuropa.eu/ontology/L1_Sensory_Stimulus
