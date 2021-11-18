@@ -30,7 +30,7 @@ od:F9_involved_smell rdf:type owl:ObjectProperty ;
 
 
 ###  http://data.odeuropa.eu/ontology/L1_generated
-od:L1_generated rdf:type owl:ObjectProperty ;
+od:F1_generated rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf crm:P92_brought_into_existence ;
                 rdf:type owl:AsymmetricProperty ;
                 rdfs:domain od:L2_Stimulus_Generation ;
@@ -39,7 +39,7 @@ od:L1_generated rdf:type owl:ObjectProperty ;
 
 
 ###  http://data.odeuropa.eu/ontology/L2_perceived
-od:L2_perceived rdf:type owl:ObjectProperty ;
+od:F2_perceived rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf crmsci:O8_observed ;
                 rdf:type owl:AsymmetricProperty ;
                 rdfs:domain od:L3_Sensory_Experience ;
@@ -48,34 +48,34 @@ od:L2_perceived rdf:type owl:ObjectProperty ;
 
 
 ###  http://data.odeuropa.eu/ontology/L3_had_source
-od:L3_had_source rdf:type owl:ObjectProperty ;
+od:F3_had_source rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf crm:P12_occurred_in_the_presence_of ;
                  rdfs:domain od:L2_Stimulus_Generation ;
                  rdfs:range crmsci:S10_Material_Substantial .
 
 
 ###  http://data.odeuropa.eu/ontology/L4_had_carrier
-od:L4_had_carrier rdf:type owl:ObjectProperty ;
+od:F4_had_carrier rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf crm:P12_occurred_in_the_presence_of ;
                   rdfs:domain od:L2_Stimulus_Generation ;
                   rdfs:range crmsci:S10_Material_Substantial .
 
 
 ###  http://data.odeuropa.eu/ontology/L5_involved_gesture
-od:L5_involved_gesture rdf:type owl:ObjectProperty ;
+od:F5_involved_gesture rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf crm:P9_consists_of ;
                        rdfs:domain crm:E7_Activity ;
                        rdfs:range od:L7_Gesture .
 
 
 ###  http://data.odeuropa.eu/ontology/L6_evoked
-od:L6_evoked rdf:type owl:ObjectProperty ;
+od:F6_evoked rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf crm:P15_was_influenced_by ;
              rdfs:domain od:L3_Sensory_Experience .
 
 
 ###  http://data.odeuropa.eu/ontology/L7_has_species
-od:L7_has_species rdf:type owl:ObjectProperty ;
+od:F7_has_species rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf crm:P137_exemplifies ;
                   rdf:type owl:AsymmetricProperty ;
                   rdfs:domain od:L6_Animal ;
@@ -84,7 +84,7 @@ od:L7_has_species rdf:type owl:ObjectProperty ;
 
 
 ###  http://data.odeuropa.eu/ontology/L8_has_nose_quality
-od:L8_has_nose_quality rdf:type owl:ObjectProperty ;
+od:F8_has_nose_quality rdf:type owl:ObjectProperty ;
                        rdfs:domain crm:E39_Actor ;
                        rdfs:range crm:E55_Type .
 
