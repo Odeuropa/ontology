@@ -7,13 +7,28 @@ Each CQ has been translated in SPARQL, following the Odeuropa model.
 
 > The data model and the ontology are work in progress. Some modification in the query can be made accordingly
 
+
 |                                                         | n. |
 |---------------------------------------------------------|----|
-| Answerable by the model                                 | 62 |
+| :white_check_mark: Answerable by the model                                 | 62 |
 | :robot: More AI needed (e.g. embeddings)                        | 7  |
 | :globe_with_meridians: Answerable including external knowledge (e.g. Wikidata) | 4  |
 | :pencil: Require model extension | 1 |
 | TOTAL                                                   | 74 |
+
+Detail
+
+| Category                                         | :white_check_mark: | :robot: |  :globe_with_meridians: | :pencil: |TOT|
+|--------------------------------------------------|----|----|----|----|----|
+| [A. Smells](#a-smells)                           | 10 | 0 | 0 | 1|  11 |
+| [B. Noses and Gestures](#b-noses-and-gestures)   | 6| 0|0|0|6  |
+| [C. Identities](#c-identities) | 6| 0|0|0|6  |
+| [D. Emotions](#d-emotions) | 6| 0|0|0|6  |
+| [E. Practices](#e-practices) | 8| 5|0|0|13  |
+| [F. Sites and contexts](#f-sites-and-contexts)  | 10| 0|2|0|11  |
+| [G. Texts and images](#g-texts-and-images)  | 19| 0|2|0|21  |
+
+Recap:
 
 
 ## Table of Contents
