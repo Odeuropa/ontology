@@ -1,9 +1,15 @@
 # Odeuropa Ontology
- Odeuropa Ontology for Olfactory Information
+ [![CC BY 4.0][cc-by-shield]][cc-by]
 
-This work is in progress: classes and properties may change without notice.
+The Odeuropa data model for representing odours and their experiences from a Cultural Heritage perspective.
 
-Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+The model re-uses and extends established ontologies such as CIDOC-CRM, in order to represent the relevant information as a set of interconnected events.
+
+- [OWL](./odeuropa-ontology.owl)
+- [Documentation](https://docs.google.com/presentation/d/1BNAscfV7JodhNAo-zgc7qkQQgUMSESdnE8EAxJuUO5I) (slides)
+- [Complete Schema](https://docs.google.com/presentation/d/1vDzgM4i7AZScEmRpB_CVK60TtYv4qp333MlZVGAAp3Q)
+
+----------
 
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
