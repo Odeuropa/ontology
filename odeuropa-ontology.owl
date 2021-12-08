@@ -7,11 +7,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix crmsci: <http://www.ics.forth.gr/isl/CRMsci/> .
-@base <http://data.odeuropa.eu/ontology> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
-<http://data.odeuropa.eu/ontology> rdf:type owl:Ontology ;
-                                    owl:imports crm: ;
-                                    owl:versionInfo "0.2" .
+od: rdf:type owl:Ontology ;
+                                     owl:imports crm: ;
+                                     vann:preferredNamespaceUri "http://data.odeuropa.eu/ontology/" ;
+                                     owl:versionInfo "0.2" .
 
 #################################################################
 #    Object Properties
@@ -23,13 +24,7 @@ od:F10_targeted rdf:type owl:ObjectProperty ;
                 rdfs:domain od:L16_Odorizing .
 
 
-###  http://data.odeuropa.eu/ontology/F9_involved_smell
-od:F9_involved_smell rdf:type owl:ObjectProperty ;
-                     rdfs:domain od:L16_Odorizing ;
-                     rdfs:range od:L11_Smell .
-
-
-###  http://data.odeuropa.eu/ontology/L1_generated
+###  http://data.odeuropa.eu/ontology/F1_generated
 od:F1_generated rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf crm:P92_brought_into_existence ;
                 rdf:type owl:AsymmetricProperty ;
@@ -38,7 +33,7 @@ od:F1_generated rdf:type owl:ObjectProperty ;
                 owl:cardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://data.odeuropa.eu/ontology/L2_perceived
+###  http://data.odeuropa.eu/ontology/F2_perceived
 od:F2_perceived rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf crmsci:O8_observed ;
                 rdf:type owl:AsymmetricProperty ;
@@ -47,34 +42,34 @@ od:F2_perceived rdf:type owl:ObjectProperty ;
                 owl:cardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://data.odeuropa.eu/ontology/L3_had_source
+###  http://data.odeuropa.eu/ontology/F3_had_source
 od:F3_had_source rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf crm:P12_occurred_in_the_presence_of ;
                  rdfs:domain od:L2_Stimulus_Generation ;
                  rdfs:range crmsci:S10_Material_Substantial .
 
 
-###  http://data.odeuropa.eu/ontology/L4_had_carrier
+###  http://data.odeuropa.eu/ontology/F4_had_carrier
 od:F4_had_carrier rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf crm:P12_occurred_in_the_presence_of ;
                   rdfs:domain od:L2_Stimulus_Generation ;
                   rdfs:range crmsci:S10_Material_Substantial .
 
 
-###  http://data.odeuropa.eu/ontology/L5_involved_gesture
+###  http://data.odeuropa.eu/ontology/F5_involved_gesture
 od:F5_involved_gesture rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf crm:P9_consists_of ;
                        rdfs:domain crm:E7_Activity ;
                        rdfs:range od:L7_Gesture .
 
 
-###  http://data.odeuropa.eu/ontology/L6_evoked
+###  http://data.odeuropa.eu/ontology/F6_evoked
 od:F6_evoked rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf crm:P15_was_influenced_by ;
              rdfs:domain od:L3_Sensory_Experience .
 
 
-###  http://data.odeuropa.eu/ontology/L7_has_species
+###  http://data.odeuropa.eu/ontology/F7_has_species
 od:F7_has_species rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf crm:P137_exemplifies ;
                   rdf:type owl:AsymmetricProperty ;
@@ -83,11 +78,16 @@ od:F7_has_species rdf:type owl:ObjectProperty ;
                   owl:cardinality "1"^^xsd:nonNegativeInteger .
 
 
-###  http://data.odeuropa.eu/ontology/L8_has_nose_quality
+###  http://data.odeuropa.eu/ontology/F8_has_nose_quality
 od:F8_has_nose_quality rdf:type owl:ObjectProperty ;
                        rdfs:domain crm:E39_Actor ;
                        rdfs:range crm:E55_Type .
 
+
+###  http://data.odeuropa.eu/ontology/F9_involved_smell
+od:F9_involved_smell rdf:type owl:ObjectProperty ;
+                     rdfs:domain od:L16_Odorizing ;
+                     rdfs:range od:L11_Smell .
 
 
 #################################################################
