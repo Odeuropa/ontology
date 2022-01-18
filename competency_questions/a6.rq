@@ -1,4 +1,4 @@
-PREFIX od:    <http://data.odeuropa.org/ontology/>
+PREFIX od:    <http://data.odeuropa.eu/ontology/>
 PREFIX crm:   <http://erlangen-crm.org/current/>
 PREFIX time:  <http://www.w3.org/2006/time#>
 PREFIX wd:    <http://www.wikidata.org/entity/>
@@ -13,8 +13,8 @@ WHERE {
     wdt:P582 ?end.
 
   # I retrieve all new odours in the chosen period
-  ?emission od:F4_had_source / crm:P137_exemplifies ?source;
-            od:P1_generated ?smell .
+  ?emission od:F3_had_source / crm:P137_exemplifies ?source;
+            od:F1_generated ?smell .
 
   ?experience od:F2_perceived ?smell;
             time:hasTime / time:inXSDDate ?time.
@@ -25,8 +25,8 @@ WHERE {
   # These odours should not be in the following query
   FILTER NOT EXISTS {
     # I retrieve all odours before the chosen period
-    ?emission2 od:F4_had_source / crm:P137_exemplifies ?source;
-              od:P1_generated ?smell2 .
+    ?emission2 od:F3_had_source / crm:P137_exemplifies ?source;
+              od:F1_generated ?smell2 .
 
     ?experience2 od:F2_perceived ?smell2;
               time:hasTime / time:inXSDDate ?time2.

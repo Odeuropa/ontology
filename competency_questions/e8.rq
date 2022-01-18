@@ -1,4 +1,4 @@
-PREFIX od:    <http://data.odeuropa.org/ontology/>
+PREFIX od:    <http://data.odeuropa.eu/ontology/>
 PREFIX crm:   <http://erlangen-crm.org/current/>
 PREFIX time:  <http://www.w3.org/2006/time#>
 PREFIX reo:   <https://read-it.acc.hum.uu.nl/ontology#>
@@ -13,8 +13,8 @@ WHERE {
         crm:P33_used_specific_technique ?technique .
  } UNION {
    ?emission a od:L12_Smell_Emission ;
-             od:F4_had_source ?source ;
-             od:P1_generated ?smell .
+             od:F3_had_source ?source ;
+             od:F1_generated ?smell .
 
    ?action crm:P108_has_produced ?source .
      crm:P33_used_specific_technique ?technique .

@@ -1,4 +1,4 @@
-PREFIX od:    <http://data.odeuropa.org/ontology/>
+PREFIX od:    <http://data.odeuropa.eu/ontology/>
 PREFIX crm:   <http://erlangen-crm.org/current/>
 PREFIX time:  <http://www.w3.org/2006/time#>
 PREFIX reo:  <https://read-it.acc.hum.uu.nl/ontology#>
@@ -10,8 +10,8 @@ WHERE {
   ?experience a od:L13_Olfactory_Experience ;
           od:F2_perceived ?smell;
 
-  ?emission od:F4_had_source / crm:P137_exemplifies ?source;
-          od:P1_generated ?smell .
+  ?emission od:F3_had_source / crm:P137_exemplifies ?source;
+          od:F1_generated ?smell .
 
 
 
