@@ -18,7 +18,7 @@ WHERE {
           crm:P140_assigned_attribute_to ?smell .
 
   ?text a crm:E33_Linguistic_Object ;
-      schema:dateCreated ?time ;
+      schema:dateCreated / time:hasBeginning  ?time ;
       crm:P67_refers_to ?smell .
 
   FILTER ( ?time >= "1401"^^xsd:gYear && ?time <= "1500"^^xsd:gYear )
