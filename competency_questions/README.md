@@ -25,7 +25,7 @@ Detail
 | [C. Identities](#c-identities) | 6| 0|0|0|6  |
 | [D. Emotions](#d-emotions) | 6| 0|0|0|6  |
 | [E. Practices](#e-practices) | 8| 5|0|0|13  |
-| [F. Sites and contexts](#f-sites-and-contexts)  | 10| 0|2|0|11  |
+| [F. Sites and contexts](#f-sites-and-contexts)  | 9| 0|2|0|11  |
 | [G. Texts and images](#g-texts-and-images)  | 19| 0|2|0|21  |
 
 Recap:
