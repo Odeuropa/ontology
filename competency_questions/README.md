@@ -3,10 +3,7 @@ Competency Questions
 
 This folder contains the competency questions (CQ) collected in the context of [the Odeuropa project](https://odeuropa.eu/) for realising and validating the Odeuropa Data Model. Those questions have been defined by domain expert at the beginning of the project.
 
-Each CQ has been translated in SPARQL, following the Odeuropa model.
-
-> The data model and the ontology are work in progress. Some modification in the query can be made accordingly
-
+Each CQ has been translated in SPARQL, following the Odeuropa model. Some questions can need some external knowledge (e.g. connection with other KG, such as Wikidata) or some more complex AI technique (which has been made explicit for each question).
 
 |                                                         | n. |
 |---------------------------------------------------------|----|
@@ -69,7 +66,7 @@ _What smells were significant in the past?_
 [query](./a8.rq) :pencil:
 
 1. Was [smell 1, e.g. muck] perceived as more [adjective, e.g. disgusting] than [smell 2, e.g. smog]?  
-[query](./a9.rq) :robot:
+[query](./a9.rq) :robot: (similarity over word embeddings)
 
 1. Which kind of smell is more likely to trigger [childhood] memories?  
 [query](./a10.rq)
@@ -150,13 +147,13 @@ _What feelings were associated with smells in parts of Europe at different times
 _What kinds of practices produced smells?_
 
 1. Which types of practices produce a bad smell?  
-[query](./e11.rq) :robot:
+[query](./e11.rq) :robot: (sentiment detection)
 
 1. Which types of practices produce [smell, e.g. sweet]?  
 [query](./e12.rq)
 
 1. What types of cooking produce a bad smell?  
-[query](./e1.rq) :robot:
+[query](./e1.rq) :robot: (sentiment detection)
 
 1. What types of cooking are producing [smell, e.g. sweet]?  
 [query](./e2.rq)
@@ -174,7 +171,7 @@ _What kinds of practices produced smells?_
 [query](./e6.rq)
 
 1. Which practice changed the smells it produced over time?  
-[query](./e7.rq) :robot:
+[query](./e7.rq) :robot: (similarity over word embeddings)
 
 1. Who were the people associated with the practices that produced/reduced smell?  
 [query](./e8.rq)
@@ -183,10 +180,10 @@ _What kinds of practices produced smells?_
 [query](./e9.rq)
 
 1. What was a protective [health] scent in X period?  
-[query](./e10.rq) :robot:
+[query](./e10.rq) :robot: (similarity over word embeddings)
 
 1. Which smells are associated with hygiene? [perfume, filth]  
-[query](./e13.rq) :robot:
+[query](./e13.rq) :robot: (similarity over word embeddings)
 
 ## F. Sites and contexts
 
@@ -266,7 +263,7 @@ _How smells are represented in texts and images?_
 [query](./g12.rq)
 
 1. Which paintings show [pleasant, unpleasant] smells?  
-[query](./g13.rq) :robot:
+[query](./g13.rq) :robot: (sentiment detection)
 
 1. Which kind of reactions to smells are possible to find in [Dutch] paintings of [18th century]?  
 [query](./g14.rq)
