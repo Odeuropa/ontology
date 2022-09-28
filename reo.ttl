@@ -1,0 +1,966 @@
+@prefix ns1: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E39_Actor> a owl:Class ;
+    rdfs:label "E39 Actor"@en ;
+    ns1:color "#56B4E9" ;
+    skos:notation "E39" ;
+    skos:prefLabel "Author"@en ;
+    skos:related <http://iflastandards.info/ns/fr/frbr/frbroo/F2> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E56_Language> a owl:Class ;
+    rdfs:label "E56 Language"@en ;
+    ns1:color "#56B4E9" ;
+    skos:notation "E56" ;
+    skos:prefLabel "Language"@en ;
+    skos:related <http://iflastandards.info/ns/fr/frbr/frbroo/F2> .
+
+<http://www.cidoc-crm.org/cidoc-crm/P100i_died_in> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <http://erlangen-crm.org/current/E69_Death> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of> ;
+    skos:prefLabel "died in"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P102i_is_title_of> rdfs:domain <http://erlangen-crm.org/current/E35_Title> ;
+    rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P102_has_title> ;
+    skos:prefLabel "is title of"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P128i_is_carried_by> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+    rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F5> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P128_carries> ;
+    skos:prefLabel "is carried by"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P129i_is_subject_of> rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO40> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P129_is_about> ;
+    skos:prefLabel "is subject of"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P14i_performed> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by> ;
+    skos:prefLabel "performed"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P15i_influenced> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by> ;
+    skos:prefLabel "influenced"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span> ;
+    skos:prefLabel "is time-span of"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P5i_forms_part_of> rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO13>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO3>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO8>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO9> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO1> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P5_consists_of> ;
+    skos:prefLabel "forms part of"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> ;
+    skos:prefLabel "is referred to by"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P78i_identifies> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E50_Date> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P78_is_identified_by> ;
+    skos:prefLabel "identifies"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at> ;
+    skos:prefLabel "witnessed"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P87i_identifies> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E48_Place_Name> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P87_is_identified_by> ;
+    skos:prefLabel "identifies"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P98i_was_born> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <http://erlangen-crm.org/current/E67_Birth> ;
+    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life> ;
+    skos:prefLabel "was born"@en .
+
+skos:notation a owl:AnnotationProperty .
+
+<https://read-it.acc.hum.uu.nl/ontology#> a owl:Ontology ;
+    rdfs:label "READ-IT ongoing"@en ;
+    rdfs:comment "" ;
+    owl:imports <http://www.cidoc-crm.org/cidoc-crm/> ;
+    owl:versionInfo "Exported from OntoME: READ-IT ongoing" .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_age> a owl:ObjectProperty ;
+    rdfs:label "readP21i has age"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO35> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP21> ;
+    skos:notation "readP21i" ;
+    skos:prefLabel "has age"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_aim> a owl:ObjectProperty ;
+    rdfs:label "readP15i has aim"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO2> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO18> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP15> ;
+    skos:notation "readP15i"@en ;
+    skos:prefLabel "has aim"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_citizenship> a owl:ObjectProperty ;
+    rdfs:label "readP22i has citizenship"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO36> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP22> ;
+    skos:notation "readP22i" ;
+    skos:prefLabel "has citizenship"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_disposition> a owl:ObjectProperty ;
+    rdfs:label "readP11i has disposition"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO2> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP11> ;
+    skos:notation "readP11i" ;
+    skos:prefLabel "has disposition"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_educational_level> a owl:ObjectProperty ;
+    rdfs:label "readP23i has educational level"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO39> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP23> ;
+    skos:notation "readP23i" ;
+    skos:prefLabel "has educational level"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_frequency> a owl:ObjectProperty ;
+    rdfs:label "readP8i has frequency"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO4> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP8> ;
+    skos:notation "readP8i" ;
+    skos:prefLabel "has frequency"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_genre> a owl:ObjectProperty ;
+    rdfs:label "readP5i has genre"@en ;
+    rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO6> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP5> ;
+    skos:notation "readP5i" ;
+    skos:prefLabel "has genre"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_habit> a owl:ObjectProperty ;
+    rdfs:label "readP12i has habit"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO2> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO17> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP12> ;
+    skos:notation "readP12i" ;
+    skos:prefLabel "has habit"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_intensity> a owl:ObjectProperty ;
+    rdfs:label "readP9i has intensity"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO7> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP9> ;
+    skos:notation "readP9i" ;
+    skos:prefLabel "has intensity"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_medium> a owl:ObjectProperty ;
+    rdfs:label "readP26i has medium"@en ;
+    rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F5> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO41> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP26> ;
+    skos:notation "readP26i" ;
+    skos:prefLabel "has medium"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_member_(ethnic_communities)> a owl:ObjectProperty ;
+    rdfs:label "readP25i has member (ethnic communities)"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO38> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP25> ;
+    skos:notation "readP25i" ;
+    skos:prefLabel "has member (ethnic communities)"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_member_(linguistic_communities)> a owl:ObjectProperty ;
+    rdfs:label "readP24i has member (linguisitic communities)"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO37> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP24> ;
+    skos:notation "readP24i" ;
+    skos:prefLabel "has member (linguistic communities)"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_nationality> a owl:ObjectProperty ;
+    rdfs:label "readP2i has nationality"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO10> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP2> ;
+    skos:notation "readP2i" ;
+    skos:prefLabel "has nationality"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_part_(effects)> a owl:ObjectProperty ;
+    rdfs:label "readP17i has effect type"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO23> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO20>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO21>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO27>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO28>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO29>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO30> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP17> ;
+    skos:notation "readP17i" ;
+    skos:prefLabel "has effect type"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_part_(outcomes)> a owl:ObjectProperty ;
+    rdfs:label "readP10i has outcome type"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO12> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO12>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO22>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO26>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO31>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO32>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO33> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP10> ;
+    skos:notation "readP10i" ;
+    skos:prefLabel "has outcome type"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_provenance> a owl:ObjectProperty ;
+    rdfs:label "readP6i has provenance"@en ;
+    rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F5> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO14> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP6> ;
+    skos:notation "readP6i" ;
+    skos:prefLabel "has provenance"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_religion> a owl:ObjectProperty ;
+    rdfs:label "readP4i has religion"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO15> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP4> ;
+    skos:notation "readP4i" ;
+    skos:prefLabel "has religion"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_skill> a owl:ObjectProperty ;
+    rdfs:label "readP13i has skill"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO19> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP13> ;
+    skos:notation "readP13i" ;
+    skos:prefLabel "has reading ability"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#has_status> a owl:ObjectProperty ;
+    rdfs:label "readP7i has status"@en ;
+    rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO16> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP7> ;
+    skos:notation "readP7i" ;
+    skos:prefLabel "has status"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#is_context_of> a owl:ObjectProperty ;
+    rdfs:label "readP55 is context of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO1> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP56_has_context> ;
+    skos:notation "readP55" ;
+    skos:prefLabel "is context of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#is_gender_of> a owl:ObjectProperty ;
+    rdfs:label "readP3i is gender of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO5> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP3> ;
+    skos:notation "readP3i" ;
+    skos:prefLabel "is gender of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#is_occupation_of> a owl:ObjectProperty ;
+    rdfs:label "readP1i is occupation of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO11> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP1> ;
+    skos:notation "readP1i" ;
+    skos:prefLabel "is occupation of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP27> a owl:ObjectProperty ;
+    rdfs:label "readP27 is triggered by (effects)"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO23> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#triggers_(effects)> ;
+    skos:notation "readP27" ;
+    skos:prefLabel "is triggered by (effects)"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP28> a owl:ObjectProperty ;
+    rdfs:label "readP28 is triggered by (outcomes)"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO12> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#triggers_(outcomes)> ;
+    skos:notation "readP28" ;
+    skos:prefLabel "is triggered by (outcomes)"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP29i_has_appellation> a owl:ObjectProperty ;
+    rdfs:label "readP29i has appellation" ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO43_Appellation_(temporal_entity)> ;
+    owl:inverseOf <https://read-it.acc.hum.uu.nl/ontology#readP29> ;
+    skos:notation "readP29i" ;
+    skos:prefLabel "has name"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of> rdfs:domain <http://erlangen-crm.org/current/E69_Death> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:prefLabel "was death of"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P102_has_title> rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    rdfs:range <http://erlangen-crm.org/current/E35_Title> ;
+    skos:prefLabel "has title"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P128_carries> rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F5> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+    skos:prefLabel "carries"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P129_is_about> rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO40> ;
+    rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    skos:prefLabel "is about"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:prefLabel "carried out by"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+    skos:prefLabel "was influenced by"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+    skos:prefLabel "has time-span"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P5_consists_of> rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO1> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO13>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO3>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO8>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO9> ;
+    skos:prefLabel "consists of"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> rdfs:domain <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+    skos:prefLabel "refers to"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P78_is_identified_by> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E50_Date> ;
+    skos:prefLabel "is identified by"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+    skos:prefLabel "took place at"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P87_is_identified_by> rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E48_Place_Name> ;
+    skos:prefLabel "is identified by"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life> rdfs:domain <http://erlangen-crm.org/current/E67_Birth> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:prefLabel "brought into life"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO30> a owl:Class ;
+    rdfs:label "REO30 Expectations"@en ;
+    ns1:color "#CC79A7" ;
+    rdfs:comment "The expectation of what F2 Expression might be like, before the actual E7 Activity has taken place. This includes anticipation." ;
+    skos:notation "REO30" ;
+    skos:prefLabel "Expectations"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO23> .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP1> a owl:ObjectProperty ;
+    rdfs:label "readP1 has occupation"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO11> ;
+    skos:notation "readP1" ;
+    skos:prefLabel "has occupation"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP10> a owl:ObjectProperty ;
+    rdfs:label "readP10 is outcome type of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO22>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO26>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO31>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO32>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO33> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO12> ;
+    skos:notation "readP10" ;
+    skos:prefLabel "is outcome type of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP11> a owl:ObjectProperty ;
+    rdfs:label "readP11 is disposition of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO2> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:notation "readP11" ;
+    skos:prefLabel "is disposition of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP12> a owl:ObjectProperty ;
+    rdfs:label "readP12 is habit of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO17> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO2> ;
+    skos:notation "readP12" ;
+    skos:prefLabel "is habit of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP13> a owl:ObjectProperty ;
+    rdfs:label "readP13 is skill of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO19> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:notation "readP13" ;
+    skos:prefLabel "is reading ability of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP15> a owl:ObjectProperty ;
+    rdfs:label "readP15 is aim of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO18> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO2> ;
+    skos:notation "readP15" ;
+    skos:prefLabel "is aim of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP17> a owl:ObjectProperty ;
+    rdfs:label "readP17 is effect type of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO20>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO21>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO23>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO27>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO28>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO29> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO23> ;
+    skos:notation "readP17" ;
+    skos:prefLabel "is effect type of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP2> a owl:ObjectProperty ;
+    rdfs:label "readP2 is nationality of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO10> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:notation "readP2" ;
+    skos:prefLabel "is nationality of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP21> a owl:ObjectProperty ;
+    rdfs:label "readP21 is age of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO35> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:notation "readP21" ;
+    skos:prefLabel "is age of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP22> a owl:ObjectProperty ;
+    rdfs:label "readP22 is citizenship of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO36> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:notation "readP22" ;
+    skos:prefLabel "is citizenship of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP23> a owl:ObjectProperty ;
+    rdfs:label "readP23 is educational level of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO39> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:notation "readP23" ;
+    skos:prefLabel "is educational level of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP24> a owl:ObjectProperty ;
+    rdfs:label "readP24 is member of (linguistic communities)"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO37> ;
+    skos:notation "readP24" ;
+    skos:prefLabel "is member of (linguistic communities)"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP25> a owl:ObjectProperty ;
+    rdfs:label "readP25 is member of (ethnic communities)"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO38> ;
+    skos:notation "readP25" ;
+    skos:prefLabel "is member of (ethnic communities)"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP26> a owl:ObjectProperty ;
+    rdfs:label "readP26 is medium of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO41> ;
+    rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F5> ;
+    skos:notation "readP26" ;
+    skos:prefLabel "is medium of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP29> a owl:ObjectProperty ;
+    rdfs:label "readP29 is appellation of" ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO43_Appellation_(temporal_entity)> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:notation "readP29" ;
+    skos:prefLabel "is name of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP3> a owl:ObjectProperty ;
+    rdfs:label "readP3 has gender"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO5> ;
+    skos:notation "readP3" ;
+    skos:prefLabel "has gender"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP4> a owl:ObjectProperty ;
+    rdfs:label "readP4 is religion of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO15> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+    skos:notation "readP4" ;
+    skos:prefLabel "is religion of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP5> a owl:ObjectProperty ;
+    rdfs:label "readP5 is genre of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO6> ;
+    rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    skos:notation "readP5" ;
+    skos:prefLabel "is genre of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP56_has_context> a owl:ObjectProperty ;
+    rdfs:label "readP55i has context"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO1> ;
+    skos:notation "readP55i" ;
+    skos:prefLabel "has context"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP6> a owl:ObjectProperty ;
+    rdfs:label "readP6 is provenance of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO14> ;
+    rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F5> ;
+    skos:notation "readP6" ;
+    skos:prefLabel "is provenance of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP7> a owl:ObjectProperty ;
+    rdfs:label "readP7 is status of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO16> ;
+    rdfs:range <http://iflastandards.info/ns/fr/frbr/frbroo/F2> ;
+    skos:notation "readP7" ;
+    skos:prefLabel "is status of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP8> a owl:ObjectProperty ;
+    rdfs:label "readP8 is frequency of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO4> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    skos:notation "readP8" ;
+    skos:prefLabel "is frequency of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#readP9> a owl:ObjectProperty ;
+    rdfs:label "readP9 is intensity of"@en ;
+    rdfs:domain <https://read-it.acc.hum.uu.nl/ontology#REO7> ;
+    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    skos:notation "readP9" ;
+    skos:prefLabel "is intensity of"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#triggers_(effects)> a owl:ObjectProperty ;
+    rdfs:label "readP27i triggers (effects)"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO23> ;
+    skos:notation "readP27i" ;
+    skos:prefLabel "triggers (effects)"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#triggers_(outcomes)> a owl:ObjectProperty ;
+    rdfs:label "readP28i triggers (outcomes)"@en ;
+    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    rdfs:range <https://read-it.acc.hum.uu.nl/ontology#REO12> ;
+    skos:notation "readP28i" ;
+    skos:prefLabel "triggers (outcomes)"@en .
+
+<http://erlangen-crm.org/current/E35_Title> a owl:Class ;
+    rdfs:label "E35 Title"@en ;
+    ns1:color "#56B4E9" ;
+    skos:notation "E35" ;
+    skos:prefLabel "Title"@en ;
+    skos:related <http://iflastandards.info/ns/fr/frbr/frbroo/F2> .
+
+<http://erlangen-crm.org/current/E67_Birth> a owl:Class ;
+    rdfs:label "E67 Birth"@en ;
+    ns1:color "#009E73" ;
+    skos:notation "E67" ;
+    skos:prefLabel "Date of Birth"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<http://erlangen-crm.org/current/E69_Death> a owl:Class ;
+    rdfs:label "E69 Death"@en ;
+    ns1:color "#009E73" ;
+    skos:notation "E69" ;
+    skos:prefLabel "Date of Death"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E50_Date> a owl:Class ;
+    rdfs:label "E50 Date"@en ;
+    ns1:color "#E69F00" ;
+    skos:notation "E50" ;
+    skos:prefLabel "Date"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO10> a owl:Class ;
+    rdfs:label "REO10 Nationality"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify the nationality of E21 Person��at the moment of E7 Activity or at a given time. It is considered the legal identification of belonging to one (or more) political, ethnic or linguistic groups" ;
+    skos:notation "REO10" ;
+    skos:prefLabel "Nationality"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO11> a owl:Class ;
+    rdfs:label "REO11 Occupation"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify the occupation of E21 Person at the moment of E7 Activity." ;
+    skos:notation "REO11" ;
+    skos:prefLabel "Occupation"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO13> a owl:Class ;
+    rdfs:label "REO13 Position"@en ;
+    ns1:color "#E69F00" ;
+    rdfs:comment "This class comprises concepts denoted by terms used to characterize and classify the physical position or posture of E21 Person during E7 Activity." ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55_Type>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO1> ;
+    skos:notation "REO13" ;
+    skos:prefLabel "Position"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO14> a owl:Class ;
+    rdfs:label "REO14 Provenance"@en ;
+    ns1:color "#56B4E9" ;
+    rdfs:comment "This class comprises concepts denoted by terms used to characterize and classify informations about how E21 Person obtained F5 Item." ;
+    rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F5> ;
+    skos:notation "REO14" ;
+    skos:prefLabel "Provenance"@en ;
+    skos:related <http://iflastandards.info/ns/fr/frbr/frbroo/F2> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO15> a owl:Class ;
+    rdfs:label "REO15 Religion (temporal entity)"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify the religion of E21 Person at the moment of E7 Activity or at a given time." ;
+    skos:notation "REO15" ;
+    skos:prefLabel "Religion"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO16> a owl:Class ;
+    rdfs:label "REO16 Status"@en ;
+    ns1:color "#56B4E9" ;
+    rdfs:comment "This class comprises concepts denoted by terms used to characterize and classify the publication status of the F2 Expression." ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+    skos:notation "REO16" ;
+    skos:prefLabel "Status"@en ;
+    skos:related <http://iflastandards.info/ns/fr/frbr/frbroo/F2> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO17> a owl:Class ;
+    rdfs:label "REO17 Habit"@en ;
+    ns1:color "#E69F00" ;
+    rdfs:comment "This class comprises the terms used to characterize a regular, habitual or inferquent practice of E7 Activity." ;
+    rdfs:subClassOf <https://read-it.acc.hum.uu.nl/ontology#REO2> ;
+    skos:notation "REO17" ;
+    skos:prefLabel "Habit"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO18> a owl:Class ;
+    rdfs:label "REO18 Aim"@en ;
+    ns1:color "#E69F00" ;
+    rdfs:comment "The stated aim, objective, motivation or intention behind the reading." ;
+    rdfs:subClassOf <https://read-it.acc.hum.uu.nl/ontology#REO2> ;
+    skos:notation "REO18" ;
+    skos:prefLabel "Aim"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO19> a owl:Class ;
+    rdfs:label "REO19 Skill"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class comprises the terms or concepts used to characterize the level or capacity of performing E7 Activity, based on practical knowledge or know-how, and strategies, as well as trained through practice. Can be about the aptitude to understand immaterial notions, to make inferences, to create mental imagery based on E7 Activity, to act or communicate relevantly about F2 Expression" ;
+    skos:notation "REO19" ;
+    skos:prefLabel "Reading Ability"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO20> a owl:Class ;
+    rdfs:label "REO20 Understanding"@en ;
+    ns1:color "#CC79A7" ;
+    rdfs:comment "This class comprises the terms or concepts used to characterize the general comprehension, awareness or knowledge resulting from E7 Activity or about E7 Activity itself." ;
+    skos:notation "REO20" ;
+    skos:prefLabel "Understanding"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO23> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO21> a owl:Class ;
+    rdfs:label "REO21 Emotions"@en ;
+    ns1:color "#CC79A7" ;
+    rdfs:comment "This class comprises the terms or concepts used to characterize the affective response (sentiment, appraisal, feeling) associated with E7 Activity" ;
+    skos:notation "REO21" ;
+    skos:prefLabel "Emotions"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO23> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO22> a owl:Class ;
+    rdfs:label "REO22 Evaluation"@en ;
+    ns1:color "#F0E442" ;
+    rdfs:comment "Evaluative report of F2 Expression" ;
+    skos:notation "REO22" ;
+    skos:prefLabel "Evaluation"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO12> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO26> a owl:Class ;
+    rdfs:label "REO26 Summary"@en ;
+    ns1:color "#F0E442" ;
+    rdfs:comment "Non-evaluative report of a F2 Expression" ;
+    skos:notation "REO26" ;
+    skos:prefLabel "Summary"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO12> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO27> a owl:Class ;
+    rdfs:label "REO27 Mental imagery"@en ;
+    ns1:color "#CC79A7" ;
+    rdfs:comment "A sensory perception and representation enhanced by F2 Expression " ;
+    skos:notation "REO27" ;
+    skos:prefLabel "Mental Imagery"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO23> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO28> a owl:Class ;
+    rdfs:label "REO28 Memories (textual)"@en ;
+    ns1:color "#CC79A7" ;
+    rdfs:comment "the act of remembering, or the thing remembered : memory, remembrance, recollection, reminiscence of something previously done" ;
+    skos:notation "REO28" ;
+    skos:prefLabel "Memories (of reading)"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO23> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO29> a owl:Class ;
+    rdfs:label "REO29 Memories (non textual)"@en ;
+    ns1:color "#CC79A7" ;
+    rdfs:comment "the act of remembering, or the thing remembered: memory, remembrance, recollection, reminiscence of an event, idea, notion " ;
+    skos:notation "REO29" ;
+    skos:prefLabel "Memories (other)"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO23> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO3> a owl:Class ;
+    rdfs:label "REO3 Environment"@en ;
+    ns1:color "#E69F00" ;
+    rdfs:comment "This class comprises concepts denoted by terms used to characterize and classify the environmental conditions under which E7 Activity took place." ;
+    rdfs:subClassOf <https://read-it.acc.hum.uu.nl/ontology#REO1> ;
+    skos:notation "REO3" ;
+    skos:prefLabel "Environment"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO31> a owl:Class ;
+    rdfs:label "REO31 Action"@en ;
+    ns1:color "#F0E442" ;
+    rdfs:comment "Activity of a result of E7 activity" ;
+    skos:notation "REO31" ;
+    skos:prefLabel "Action"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO12> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO32> a owl:Class ;
+    rdfs:label "REO32 Change in thinking"@en ;
+    ns1:color "#F0E442" ;
+    rdfs:comment "Where E7 Activity has caused a change in thinking " ;
+    skos:notation "REO32" ;
+    skos:prefLabel "Change in Thinking"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO12> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO33> a owl:Class ;
+    rdfs:label "REO33 Output"@en ;
+    ns1:color "#F0E442" ;
+    rdfs:comment "Produced as an intentional result of E7 Activity." ;
+    skos:notation "REO33" ;
+    skos:prefLabel "Output"@en ;
+    skos:related <https://read-it.acc.hum.uu.nl/ontology#REO12> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO35> a owl:Class ;
+    rdfs:label "REO35 Age (temporal entity)"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "Indication of age at the time of E7 Activity or at the time of report/testimonyof E7 Activity" ;
+    skos:notation "REO35" ;
+    skos:prefLabel "Age"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO36> a owl:Class ;
+    rdfs:label "REO36 Citizenship"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class comprises the concepts and terms used to characterize the legal status of being (a) a citizen of one (or more) independent states or (b) being a subject of one (or more) imperial systems." ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+    skos:notation "REO36" ;
+    skos:prefLabel "Citizenship"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO37> a owl:Class ;
+    rdfs:label "REO37 Linguistic communities"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class comprises the concepts and terms used to characterize the identification with one or more than one distinct linguistic community" ;
+    skos:notation "REO37" ;
+    skos:prefLabel "Linguistic Communities"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO38> a owl:Class ;
+    rdfs:label "RE038 Ethnic communities"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class comprises the concepts and terms used to characterize the identification with one or (more than one) distinct ethnic community." ;
+    skos:notation "REO38" ;
+    skos:prefLabel "Ethnic Communities"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO39> a owl:Class ;
+    rdfs:label "REO39 Educational level"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class comprises the terms and concepts used to characterize the level of education of the E21 Person at the time of E7 Activity, if known. Disctint from C21 Skill." ;
+    skos:notation "REO39" ;
+    skos:prefLabel "Educational Level"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO4> a owl:Class ;
+    rdfs:label "REO4 Frequency"@en ;
+    ns1:color "#E69F00" ;
+    rdfs:comment "This class comprises concepts denoted by terms used to characterize and classify the frequency of E7 Activity registered by E21 Person. " ;
+    skos:notation "REO4" ;
+    skos:prefLabel "Frequency"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO40> a owl:Class ;
+    rdfs:label "REO40 Subject matter"@en ;
+    ns1:color "#56B4E9" ;
+    rdfs:comment "This class comprises the concepts and terms used to characterize any information about the content or subject matter of the F2 Expression being read." ;
+    skos:notation "REO40" ;
+    skos:prefLabel "Subject Matter"@en ;
+    skos:related <http://iflastandards.info/ns/fr/frbr/frbroo/F2> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO41> a owl:Class ;
+    rdfs:label "REO41 Medium"@en ;
+    ns1:color "#56B4E9" ;
+    rdfs:comment "This class comprises the concepts and terms used to characterize the medium (physical or digital) by which F2 Expression is communicated to E21 Person. The medium (physical or digital) by which the audio recording of a text is communicated to its listener(s)." ;
+    rdfs:subClassOf <http://iflastandards.info/ns/fr/frbr/frbroo/F5> ;
+    skos:notation "REO41" ;
+    skos:prefLabel "Medium"@en ;
+    skos:related <http://iflastandards.info/ns/fr/frbr/frbroo/F2> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO42> a owl:Class ;
+    rdfs:label "REO42 Effects/Outcomes"@en ;
+    ns1:color "#CC79A7" ;
+    rdfs:comment """
+            Placeholder class for existing annotations made using the READ-IT skinny ontology.
+            They should be converted to instances of either REO12 or REO23.
+        """ ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    owl:deprecated true ;
+    skos:notation "REO42" ;
+    skos:prefLabel "Effects/Outcomes"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO43_Appellation_(temporal_entity)> a owl:Class ;
+    rdfs:label "REO43 Appellation (temporal entity)" ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class refers to the fact that a E21 Person is identified by a group using a specific appellation during a given time span." ;
+    skos:notation "REO43" ;
+    skos:prefLabel "Name"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO5> a owl:Class ;
+    rdfs:label "REO5 Gender"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify the gender of E21 Person at the moment of E7 Activity." ;
+    skos:notation "REO5" ;
+    skos:prefLabel "Gender"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO6> a owl:Class ;
+    rdfs:label "REO6 Genre"@en ;
+    ns1:color "#56B4E9" ;
+    rdfs:comment "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify the literary genre of the F2 Expression." ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+    skos:notation "REO6" ;
+    skos:prefLabel "Genre"@en ;
+    skos:related <http://iflastandards.info/ns/fr/frbr/frbroo/F2> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO7> a owl:Class ;
+    rdfs:label "REO7 Intensity"@en ;
+    ns1:color "#E69F00" ;
+    rdfs:comment "This class comprises concepts denoted by terms used to characterize and classify the level of mental engagement and concentration of E21 Person during E7 Activity." ;
+    skos:notation "REO7" ;
+    skos:prefLabel "Intensity"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO8> a owl:Class ;
+    rdfs:label "REO8 Lighting"@en ;
+    ns1:color "#E69F00" ;
+    rdfs:comment "This class comprises concepts denoted by terms used to characterize and classify the details of the lighting conditions under which E7 Activity took place." ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55_Type>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO1> ;
+    skos:notation "REO8" ;
+    skos:prefLabel "Lighting"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO9> a owl:Class ;
+    rdfs:label "REO9 Location"@en ;
+    ns1:color "#E69F00" ;
+    rdfs:comment "This class comprises concepts denoted by terms�� used to characterize and classify the location within a specific address (or mode of transport) where E7 Activity took place." ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55_Type>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO1> ;
+    skos:notation "REO9" ;
+    skos:prefLabel "Location"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E53_Place> a owl:Class ;
+    rdfs:label "E53 Place"@en ;
+    ns1:color "#E69F00" ;
+    skos:notation "E53" ;
+    skos:prefLabel "Place"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> .
+
+<http://www.cidoc-crm.org/cidoc-crm/E55_Type> a owl:Class ;
+    rdfs:label "E55 Type"@en ;
+    rdfs:comment """This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances
+            of CRM classes. Instances of E55 Type represent concepts in contrast to instances of E41 Appellation which are used to name instances of
+            CRM classes. E55 Type is the CRM���s interface to domain specific ontologies and thesauri. These can be represented in the CRM as subclasses
+            of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader term (has narrower term). Such
+            hierarchies may be extended with additional properties. """ ;
+    skos:notation "E55" ;
+    skos:prefLabel "Type"@en .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F5> a owl:Class ;
+    rdfs:label "F5 Item"@en ;
+    rdfs:comment """This class comprises physical objects (printed books, scores, CDs, DVDs, CD-ROMS, etc.) that carry a F24 Publication Expression and
+			were produced by an industrial process involving an F3 Manifestation Product Type. """ ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier> ;
+    skos:notation "F5" ;
+    skos:prefLabel "Item"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO1> a owl:Class ;
+    rdfs:label "REO1 Circumstances"@en ;
+    rdfs:comment "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify the circumstances of E7 Activity." ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E55>,
+        <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+    skos:notation "REO1" ;
+    skos:prefLabel "Circumstances"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO2> a owl:Class ;
+    rdfs:label "REO2 Disposition"@en ;
+    ns1:color "#009E73" ;
+    rdfs:comment """This class comprises the dispositions of an act of reading from the E39 Actor or E21 Person perspective.
+Premises are considered as the set of personal immaterial dispositions (motivation, inspiration, constraint ...) that lead to the realization of an E7 activity they precede. There may be one or more premises.""" ;
+    skos:notation "REO2" ;
+    skos:prefLabel "Disposition"@en ;
+    skos:related <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO12> a owl:Class ;
+    rdfs:label "REO12_Outcomes (external processes)"@en ;
+    ns1:color "#F0E442" ;
+    rdfs:comment """This class comprises the outcome of an action from the E39 Actor or E21 Person perspective.
+The outcome is considered direct effect or consequence resulting from E7 Activity which it follows. Outcome is considered immaterial as it mainly affects the state of mind and the condition of the E39 Actor or E21 Person. Outcome is not only consisting in a change of the state of mind but also in a change of the situation of the E39 Actor or E21 Person. There may be one or many outcomes resulting from E7 Activity.""" ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO42> ;
+    owl:disjointWith <https://read-it.acc.hum.uu.nl/ontology#REO23> ;
+    skos:notation "REO12" ;
+    skos:prefLabel "Outcomes (external processes)"@en .
+
+<https://read-it.acc.hum.uu.nl/ontology#REO23> a owl:Class ;
+    rdfs:label "REO23 Effects (internal processes)"@en ;
+    ns1:color "#CC79A7" ;
+    rdfs:comment "This class comprises the concepts and terms used to characterize the emotional, intellectual, or psychological effect that the E7 Activity has on the E21 Person at the time of E7 Activity." ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity>,
+        <https://read-it.acc.hum.uu.nl/ontology#REO42> ;
+    skos:notation "REO23" ;
+    skos:prefLabel "Effects (internal processes)"@en .
+
+<http://iflastandards.info/ns/fr/frbr/frbroo/F2> a owl:Class ;
+    rdfs:label "F2 Expression"@en ;
+    ns1:color "#56B4E9" ;
+    rdfs:comment """This class comprises the intellectual or artistic realisations of works in the form of identifiable immaterial objects, such as texts, poems, jokes, musical or choreographic notations, movement pattern, sound pattern, images, multimedia objects, or any combination of such forms that have objectively recognisable structures. The substance of F2 Expression is signs.
+Expressions cannot exist without a physical carrier, but do not depend on a specific physical carrier and can exist on one or more carriers simultaneously. Carriers may include human memory.
+Inasmuch as the form of F2 Expression is an inherent characteristic of the F2 Expression, any change in form (e.g., from alpha-numeric notation to spoken word, a poem created in capitals and rendered in lower case) is a new F2 Expression. Similarly, changes in the intellectual conventions or instruments that are employed to express a work (e.g., translation from one language to another) result in the creation of a new F2 Expression. Thus, if a text is revised or modified, the resulting F2 Expression is considered to be a new F2 Expression. Minor changes, such as corrections of spelling and punctuation, etc., are normally considered variations within the same F2 Expression. On a practical level, the degree to which distinctions are made between variant expressions of a work will depend to some extent on the nature of the F1 Work itself, and on the anticipated needs of users.
+The genre of the work may provide an indication of which features are essential to the expression. In some cases, aspects of physical form, such as typeface and page layout, are not integral to the intellectual or artistic realisation of the work as such, and therefore are not distinctive criteria for the respective expressions. For another work, features such as layout may be essential. For instance, the author or a graphic designer may wrap a poem around an image.
+An expression of a work may include expressions of other works within it. For instance, an anthology of poems is regarded as a work in its own right that makes use of expressions of the individual poems that have been selected and ordered as part of an intellectual process. This does not make the contents of the aggregated expressions part of this work, but only parts of the resulting expression.
+If an instance of F2 Expression is of a specific form, such as text, image, etc., it may be simultaneously instantiated in the specific classes representing these forms in CIDOC CRM. Thereby one can make use of the more specific properties of these classes, such as language (which is applicable to instances of E33 Linguistic Object only).""" ;
+    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+    skos:notation "F2" ;
+    skos:prefLabel "Resource"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/E7_Activity> a owl:Class ;
+    rdfs:label "E7 Activity"@en ;
+    ns1:color "#E69F00" ;
+    skos:notation "E7" ;
+    skos:prefLabel "Act of Reading"@en .
+
+<http://www.cidoc-crm.org/cidoc-crm/E21_Person> a owl:Class ;
+    rdfs:label "E21 Person"@en ;
+    ns1:color "#009E73" ;
+    skos:notation "E21" ;
+    skos:prefLabel "Reader"@en .
+

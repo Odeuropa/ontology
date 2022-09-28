@@ -1,0 +1,155 @@
+@prefix : <http://organon.elis.ugent.be/ontologies/ninsuna#> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+: 	rdf:type owl:Thing, owl:Ontology ;
+	dc:title "NinSuna Ontology"@en ;
+	dc:creator <http://multimedialab.elis.ugent.be/dvdeurse-foaf.rdf#me>, [rdf:type foaf:Person; foaf:name "Wim Van Lancker"; foaf:mbox <mailto:wim.vanlancker@ugent.be>] ;
+	dc:publisher <http://multimedialab.elis.ugent.be> ;
+	dc:description "The base ontology of the NinSuna platform. It is, amongst others, used to perform model-driven content adaptation"@en ;
+	dc:format "OWL Full"@en ;
+	dc:identifier "nsa"@en ;
+	dc:language "English"@en ;
+	rdfs:seeAlso <http://ninsuna.elis.ugent.be/> ;
+	rdfs:seeAlso <http://www.springerlink.com/content/461380502m756877/> .
+
+
+###################################
+# Additional technical properties #
+###################################
+
+:maxBitrate
+	rdf:type owl:DatatypeProperty ;
+	rdfs:label "maxBitrate"@en ;
+	rdfs:comment "The maximum bit rate (in kbps) of a media resource."@en ;
+	rdfs:domain ma:MediaResource ;
+	rdfs:range xsd:double .
+
+###########################
+# Semantical descriptions #
+###########################
+
+:hasMediaFragment
+	rdf:type owl:ObjectProperty ;
+	rdfs:label "hasMediaFragment"@en ;
+	rdfs:comment "Points to a media fragment."@en ;
+	rdfs:domain [ a owl:Class;
+				 owl:intersectionOf  (
+					:MediaResource
+					[ a owl:Class;
+                      owl:complementOf ma:MediaFragment ]
+				 )
+				] ;
+	rdfs:range ma:MediaFragment .
+
+:isMediaFragmentOf
+	rdf:type owl:ObjectProperty ;
+	rdfs:label "isMediaFragmentOf"@en ;
+	owl:inverseOf :hasMediaFragment .
+
+:TemporalFragment
+	rdf:type owl:Class ;
+	rdfs:label "TemporalFragment"@en ;
+	rdfs:comment "Represents a temporal media fragment."@en ;
+	rdfs:subClassOf ma:MediaFragment .
+
+:temporalUnit
+	rdf:type owl:ObjectProperty ;
+	rdfs:label "temporalUnit"@en ;
+	rdfs:comment "Points to a temporal unit."@en ;
+	rdfs:domain :TemporalFragment ;
+	rdfs:range :TemporalUnit .
+
+:TemporalUnit
+	rdf:type owl:Class ;
+	rdfs:label "TemporalUnit"@en ;
+	rdfs:comment "Represents a temporal unit."@en ;
+	owl:oneOf (:npt :smpte-25 :smpte-30 :smpte-30-drop :clock) .
+
+:temporalStart
+	rdf:type owl:DatatypeProperty ;
+	rdfs:label "temporalStart"@en ;
+	rdfs:comment "The start time in terms of seconds (in case of npt and smpte time unites) or date-time (in case of clock unit) of the temporal fragment."@en ;
+	rdfs:domain :TemporalFragment ;
+	rdfs:range [ rdf:type owl:Class;
+				 owl:oneOf ( xsd:double xsd:dateTime ) ] .
+
+:temporalEnd
+	rdf:type owl:DatatypeProperty ;
+	rdfs:label "temporalEnd"@en ;
+	rdfs:comment "The end time in terms of seconds (in case of npt and smpte time unites) or date-time (in case of clock unit) of the temporal fragment."@en ;
+	rdfs:domain :TemporalFragment ;
+	rdfs:range [ rdf:type owl:Class;
+				 owl:oneOf ( xsd:double xsd:dateTime ) ] .
+
+:SpatialFragment
+	rdf:type owl:Class ;
+	rdfs:label "SpatialFragment"@en ;
+	rdfs:comment "Represents a spatial media fragment."@en ;
+	rdfs:subClassOf ma:MediaFragment .
+
+:spatialUnit
+	rdf:type owl:ObjectProperty ;
+	rdfs:label "spatialUnit"@en ;
+	rdfs:comment "Points to a spatial unit."@en ;
+	rdfs:domain :SpatialFragment ;
+	rdfs:range :SpatialUnit .
+
+:SpatialUnit
+	rdf:type owl:Class ;
+	rdfs:label "SpatialUnit"@en ;
+	rdfs:comment "Represents a spatial unit."@en ;
+	owl:oneOf (:pixel :percent) .
+
+:spatialX
+	rdf:type owl:DatatypeProperty ;
+	rdfs:label "spatialX"@en ;
+	rdfs:comment "The x position of the spatial fragment."@en ;
+	rdfs:domain :SpatialFragment ;
+	rdfs:range xsd:nonNegativeInteger .
+
+:spatialY
+	rdf:type owl:DatatypeProperty ;
+	rdfs:label "spatialY"@en ;
+	rdfs:comment "The y position of the spatial fragment."@en ;
+	rdfs:domain :SpatialFragment ;
+	rdfs:range xsd:nonNegativeInteger .
+
+:spatialW
+	rdf:type owl:DatatypeProperty ;
+	rdfs:label "spatialW"@en ;
+	rdfs:comment "The width of the spatial fragment."@en ;
+	rdfs:domain :SpatialFragment ;
+	rdfs:range xsd:nonNegativeInteger .
+
+:spatialH
+	rdf:type owl:DatatypeProperty ;
+	rdfs:label "spatialH"@en ;
+	rdfs:comment "The height of the spatial fragment."@en ;
+	rdfs:domain :SpatialFragment ;
+	rdfs:range xsd:nonNegativeInteger .
+
+:CombinedMediaFragment
+	rdf:type owl:Class ;
+	rdfs:label "CombinedMediaFragment"@en ;
+	rdfs:comment "Represents a media fragment combining multiple media fragment axes."@en ;
+	rdfs:subClassOf ma:MediaFragment .
+
+:combines
+	rdf:type owl:ObjectProperty ;
+	rdfs:label "combines"@en ;
+	rdfs:comment "Points to the different media fragments to combine."@en ;
+	rdfs:domain :CombinedMediaFragment ;
+	rdfs:range [ a owl:Class;
+				 owl:intersectionOf  (
+					ma:MediaFragment
+					[ a owl:Class;
+                      owl:complementOf :CombinedMediaFragment ]
+				 )
+				] .
