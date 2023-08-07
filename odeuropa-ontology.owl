@@ -12,6 +12,7 @@
 <http://data.odeuropa.eu/ontology/> rdf:type owl:Ontology ;
                                      owl:imports crm: ;
                                      vann:preferredNamespaceUri "http://data.odeuropa.eu/ontology/" ;
+                                     dc:creator <http://data.odeuropa.eu/odeuropa>;
                                      owl:versionInfo "0.2" .
 
 #################################################################
