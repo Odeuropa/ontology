@@ -1,0 +1,184 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix story: <http://data.odeuropa.org/ontology/story> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix : <http://www.example.org/rdf#> .
+
+:War a story:Story;
+	story:title "War";
+	story:summary "War has always been an olfactory affair";
+	story:start :Introduction;
+    dc:creator :William_Tullett;
+	dc:created "2023-03-22"^^xsd:date;
+	dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> .
+
+
+:Introduction a story:StoryElement;
+	story:title "Introduction";
+	story:summary "War starts here";
+	dc:created "2023-03-22"^^xsd:date;
+	story:content """\nl
+France.
+1975.
+
+You are stood in a field, surrounded by barley as far as the eye can see.
+But your nose detects something else. As the golden crops sway in the breeze you notice a scent in the damp air.
+
+It is a vaguely metallic odour. 
+It reminds you of something.
+
+Could it be [[blood->Intro 6]]?
+Or maybe the smell of [[rust->Intro 7]]?'
+ """.
+
+<< :Introduction story:next :Intro_6 >> ;
+	story:hasAnchorText "blood" ;
+	story:partOf :War ;
+	schema:additionalType "Smells" .
+
+<< :Introduction story:next :Intro_7 >> ;
+	story:hasAnchorText "rust" ;
+	story:partOf :War ;
+	schema:additionalType "Smells" .
+
+:Intro_6 a :story:StoryElement;
+story:title "Is it blood?";
+	story:summary "Not likely blood";
+	dc:created "2023-03-22"^^xsd:date;
+	story:content """\nl
+'That seems unlikely. 
+Fifty-nine years ago, perhaps.
+
+(text-style:"expand")[(text-colour:#76c03f)[''//'You could smell blood like a slaughterhouse'. //'']](text-size:0.5)[^^1^^]
+
+But surely not now?
+How about [[rust->Intro 7]]?
+(text-size:0.5)[^^1^^First World War Veteran interviewed for //In Flanders Fields: Canadian Voices From WWI//, CBC Radio 1964.]'
+""".
+
+<< :Intro_6 story:next :Intro_7 >> ;
+	story:hasAnchorText "rust" ;
+	story:partOf :War ;
+	schema:additionalType "Smells" .
+
+:Intro_7 a story:StoryElement;
+story:title "Is it rust?";
+	story:summary "Likey to be rust";
+	dc:created "2023-10-04"^^xsd:date;
+	story:content """\nl
+'It does have an iron-like scent.
+You look closer at your surroundings and realise that the beneath the barley, metallic objects can be seen, each surface covered with an orangey-brown crust of rust.
+[[<img src="http://www.users.globalnet.co.uk/~dccfarr/Iron.jpg" width="596" height="390">->Olfigure 1]]
+
+This is our first olfactory figure (or Olfigure).
+If you like, smell the material suggested below.
+
+''Olfigure 1.''
+(text-colour:#76c03f)[//Smell a dry paperclip with dry hands. Little or no odour right?
+Lick your fingers, give the paperclip a good rub, and smell again.//]
+
+How would you describe the smell? Do you associate it with a time or place?
+(input-box: bind $code, "XX=", 3)
+You are smelling the FE^^2+^^, or ferrous ions, produced by the interaction of moisture and rusty metal, the same interaction that gives blood its metallic smell.
+
+This is the smell of the 'iron harvest'.
+In the wake of the First World War vast deposits of metal military objects, from munitions to barbed wire, were left in the [[fields->Rust 2]] of France and Belgium'
+""".
+
+<< :Intro_7 story:next :rust_2 >> ;
+	story:hasAnchorText "fields" ;
+	story:partOf :War ;
+	schema:additionalType "Spaces" .
+
+:rust_2 a story:StoryElement;
+	story:title "Rust";
+	story:summary "Smell of rust";
+	dc:created "2023-03-22"^^xsd:date;
+	story:content """\nl
+'Each year more of these items, including unexploded shells, are discovered by farmers. In the 1970s the mouldering metal still gave these fields a unique scent:
+
+(text-style:"expand")[(text-colour:#76c03f)[''//'When the air is damp you can smell rusted iron everywhere, even though you see only wheat and barley'. //'']](text-size:0.5)[^^1^^]
+
+The smell of rust is the smell of time passing.
+
+But what did the battlefields of European history smell like at the time?
+What could soldiers' noses detect in the trenches of the [[Somme->Somme 1]] in 1916 or the fields of [[Waterloo->Waterloo 1]] in 1815?
+
+(text-size:0.5)[^^1^^Paul Fussell, //The Great War and Modern Memory// (Oxford, 2013), p. 75.]'
+""".
+
+<< :rust_2 story:next :somme_1 >> ;
+	story:hasAnchorText "Somme" ;
+	story:partOf :War ;
+	schema:additionalType "Places" .
+
+<< :rust_2 story:next :waterloo_1 >> ;
+	story:hasAnchorText "Waterloo" ;
+	story:partOf :War ;
+	schema:additionalType "Places" .
+
+
+:somme_1: a story:StoryElement;
+story:title "Battle of the Somme";
+	story:summary "the battle of the Somme";
+	dc:created "2023-03-22"^^xsd:date;
+	story:content """\nl
+'What did a trench smell like during the First World War?
+
+According to Robert Graves, Lieutenant and then Captain who fought at Loos and the Somme, 
+
+(text-style:"expand")[(text-colour:#76c03f)[''//'the trenches stank with a gas-blood-lyddite-latrine smell'.//'']](text-size:0.5)[^^1^^]
+
+But overwhelming all of this was the smell of death. 
+
+When the Imperial War Museum in London launched it's 'Trench Experience' in 1990, it offered a recreation of a section of trench complete with the smells of cordite, frying bacon, and lyddite from discharged shells. 
+
+The veteran Tommy Keele, aged 96 at the time the museum opened its new exhibition, mused that 'I thought I was back'. But there were limits to how far these scents could really evoke his experience. He added:
+
+(text-style:"expand")[(text-colour:#76c03f)[''//'The smell of death - that's not here'.//'']](text-size:0.5)[^^2^^]
+
+[[<img src="https://iiif.wellcomecollection.org/image/V0018242/full/880%2C/0/default.jpg">->WW1 Death]]
+
+(text-size:0.5)[''Image: Credit: World War I: The Red Cross in the trenches. Oil painting by Cyrus Cuneo.Wellcome Collection.Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)'']
+
+(text-size:0.5)[^^1^^Robert Graves, //Goodbye to All That// (London, 1958), p. 140.]
+(text-size:0.5)[^^2^^Graham Heathcote, ‘Museum Offers Sights, Sounds, and Smells of World War I Trench’, https://apnews.com/article/9b9f2bd201ccc751e774ba98f9f18f7b, accessed 02/11/21.]'
+""".
+
+<< :somme_1 story:next :ww1_death >> ;
+	story:hasAnchorText "World War I: The Red Cross in the trenches. Oil painting by Cyrus Cuneo.Wellcome Collection" ;
+	story:partOf :War ;
+	schema:additionalType "Places" .
+
+<waterloo_1> a story:StoryElement;
+story:title "Waterloo";
+	story:summary "the site of the battle of Waterloo";
+	dc:created "2023-03-22"^^xsd:date;
+	story:content """\nl
+'Waterloo and its surrounding countryside had been characterised by the smells of war long before the fateful battle in June 1815.
+Situated between Brussels to the north and Namur to the south, the seventeenth and eighteenth centuries had seen the area criss-crossed by armies.
+The movemment of men and arms across the Belgian countryside was accompanied by a varied smellscape. In 1692, as the French entered Dinant, they were welcomed by evening prayers at the church and, as one soldier described it,
+
+(text-style:"expand")[(text-colour:#76c03f)[''//'incense, so continued, in such quantities, and so perfumed, that we could not see each other'. //'']](text-size:0.5)[^^1^^]
+
+However, an overwhelming cloud of [[incense->Religion Storyline Placeholder]] was the least of a soldier's worries. The Nine Years War (1688-1697), in which the French were opposed by an alliance of the Dutch Republic, England, Scotland, and the Holy Roman Empire, also brought [[even more troubling smells->Seige Smells 1]] with it. 
+
+(text-size:0.5)[^^1^^//Madame de Sévigné and Her Contemporaries// (London, 2vols, 1861), II, 310-1]'
+""".
+
+<< :waterloo_1 story:next :seige_smells_1 >> ;
+	story:hasAnchorText "even more troubling smells" ;
+	story:partOf :War ;
+	schema:additionalType "Smells" .
+
+<< :waterloo_1 story:next :incense >> ;
+	story:hasAnchorText "Incense" ;
+	story:partOf :Religion ;
+	schema:additionalType "Smells" .

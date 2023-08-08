@@ -29,32 +29,27 @@ dc:creator rdf:type owl:AnnotationProperty .
 vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2004/02/skos/core#closeMatch
-skos:closeMatch rdf:type owl:AnnotationProperty .
-
-
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://data.odeuropa.org/ontology/story/includeAnchor
-<http://data.odeuropa.org/ontology/story/includeAnchor> rdf:type owl:ObjectProperty ;
-                                                        rdfs:domain <http://data.odeuropa.org/ontology/story/StoryElement> ;
-                                                        rdfs:range <http://data.odeuropa.org/ontology/story/Anchor> ;
-                                                        rdfs:comment "Connect a Story Element with an anchor"@en ;
-                                                        rdfs:label "include anchor"@en .
+###  http://data.odeuropa.org/ontology/story/hasDestination
+<http://data.odeuropa.org/ontology/story/hasDestination> rdf:type owl:ObjectProperty ;
+                                                         rdfs:range <http://data.odeuropa.org/ontology/story/StoryElement> ;
+                                                         rdfs:comment "Connect an anchor with its destination Story Element"@en ;
+                                                         rdfs:label "has destination"@en .
 
 
 ###  http://data.odeuropa.org/ontology/story/next
 <http://data.odeuropa.org/ontology/story/next> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf dbp:next ;
                                                owl:inverseOf <http://data.odeuropa.org/ontology/story/prev> ;
                                                rdfs:domain <http://data.odeuropa.org/ontology/story/StoryElement> ;
                                                rdfs:range <http://data.odeuropa.org/ontology/story/StoryElement> ;
                                                rdfs:comment """The relation representing the link between two Story Elements in the context of a Story. A Story Element can have several next Story Elements, because it can belong to different stories.
 
 This relation is supposed to be specified by the Part Of property, indicating  which Story this `next` link is part of."""@en ;
-                                               rdfs:label "next"@en ;
-                                               skos:closeMatch dbp:next .
+                                               rdfs:label "next"@en .
 
 
 ###  http://data.odeuropa.org/ontology/story/partOf
@@ -67,19 +62,21 @@ This relation is supposed to be specified by the Part Of property, indicating  w
 
 ###  http://data.odeuropa.org/ontology/story/prev
 <http://data.odeuropa.org/ontology/story/prev> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf dbp:prev ;
                                                rdfs:domain <http://data.odeuropa.org/ontology/story/StoryElement> ;
                                                rdfs:range <http://data.odeuropa.org/ontology/story/StoryElement> ;
                                                rdfs:comment """The relation representing the link between two Story Elements in the context of a Story. A Story Element can have several previous Story Elements, because it can belong to different stories.
 
 This relation is supposed to be specified by the Part Of property, indicating  which Story this `prev` link is part of."""@en ;
-                                               rdfs:label "prev"@en ;
-                                               skos:closeMatch dbp:prev .
+                                               rdfs:label "prev"@en .
 
 
 ###  http://data.odeuropa.org/ontology/story/references
 <http://data.odeuropa.org/ontology/story/references> rdf:type owl:ObjectProperty ;
-                                                     rdfs:subPropertyOf owl:topObjectProperty ;
-                                                     rdfs:domain <http://data.odeuropa.org/ontology/story/StoryElement> .
+                                                     rdfs:subPropertyOf dc:references ;
+                                                     rdfs:domain <http://data.odeuropa.org/ontology/story/StoryElement> ;
+                                                     rdfs:comment "Connect a Story Element with an entity which is referenced in its content"@en ;
+                                                     rdfs:label "has references"@en .
 
 
 ###  http://data.odeuropa.org/ontology/story/start
@@ -99,14 +96,23 @@ This relation is supposed to be specified by the Part Of property, indicating  w
                                                   rdfs:domain <http://data.odeuropa.org/ontology/story/Story> .
 
 
+###  http://data.odeuropa.org/ontology/story/hasAnchorText
+<http://data.odeuropa.org/ontology/story/hasAnchorText> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain rdf:Statement ;
+                                                        rdfs:range xsd:string ;
+                                                        rdfs:label "has anchor text"@en .
+
+
 ###  http://data.odeuropa.org/ontology/story/summary
 <http://data.odeuropa.org/ontology/story/summary> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf dc:abstract ;
                                                   rdfs:domain <http://data.odeuropa.org/ontology/story/Story> ,
                                                               <http://data.odeuropa.org/ontology/story/StoryElement> .
 
 
 ###  http://data.odeuropa.org/ontology/story/title
 <http://data.odeuropa.org/ontology/story/title> rdf:type owl:DatatypeProperty ;
+                                                rdfs:subPropertyOf dc:title ;
                                                 rdfs:domain <http://data.odeuropa.org/ontology/story/Story> ,
                                                             <http://data.odeuropa.org/ontology/story/StoryElement> .
 
@@ -114,12 +120,6 @@ This relation is supposed to be specified by the Part Of property, indicating  w
 #################################################################
 #    Classes
 #################################################################
-
-###  http://data.odeuropa.org/ontology/story/Anchor
-<http://data.odeuropa.org/ontology/story/Anchor> rdf:type owl:Class ;
-                                                 rdfs:comment "A link in the text, better specified with rdf:value (label of the link, the portion of text underlined) and schema:uri (the target URI)"@en ;
-                                                 rdfs:label "Anchor"@en .
-
 
 ###  http://data.odeuropa.org/ontology/story/EncyclopediaArticle
 <http://data.odeuropa.org/ontology/story/EncyclopediaArticle> rdf:type owl:Class ;
@@ -141,45 +141,6 @@ This relation is supposed to be specified by the Part Of property, indicating  w
 
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
 rdf:Statement rdf:type owl:Class .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  http://data.odeuropa.org/ontology/story/references
-<http://data.odeuropa.org/ontology/story/references> rdf:type owl:NamedIndividual ;
-                                                     owl:sameAs dc:references .
-
-
-###  http://data.odeuropa.org/ontology/story/summary
-<http://data.odeuropa.org/ontology/story/summary> rdf:type owl:NamedIndividual ;
-                                                  owl:sameAs dc:abstract .
-
-
-###  http://data.odeuropa.org/ontology/story/title
-<http://data.odeuropa.org/ontology/story/title> rdf:type owl:NamedIndividual ;
-                                                owl:sameAs dc:title .
-
-
-###  http://purl.org/dc/elements/1.1/abstract
-dc:abstract rdf:type owl:NamedIndividual .
-
-
-###  http://purl.org/dc/elements/1.1/references
-dc:references rdf:type owl:NamedIndividual .
-
-
-###  http://purl.org/dc/elements/1.1/title
-dc:title rdf:type owl:NamedIndividual .
-
-
-#################################################################
-#    Annotations
-#################################################################
-
-<http://data.odeuropa.org/ontology/story/references> rdfs:label "references"@en ;
-                                                     rdfs:comment "Connect a Story Element with an entity which is referenced in its content"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
