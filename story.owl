@@ -33,13 +33,6 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://data.odeuropa.org/ontology/story/hasDestination
-<http://data.odeuropa.org/ontology/story/hasDestination> rdf:type owl:ObjectProperty ;
-                                                         rdfs:range <http://data.odeuropa.org/ontology/story/StoryElement> ;
-                                                         rdfs:comment "Connect an anchor with its destination Story Element"@en ;
-                                                         rdfs:label "has destination"@en .
-
-
 ###  http://data.odeuropa.org/ontology/story/next
 <http://data.odeuropa.org/ontology/story/next> rdf:type owl:ObjectProperty ;
                                                rdfs:subPropertyOf dbp:next ;
@@ -54,7 +47,7 @@ This relation is supposed to be specified by the Part Of property, indicating  w
 
 ###  http://data.odeuropa.org/ontology/story/partOf
 <http://data.odeuropa.org/ontology/story/partOf> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain rdf:Statement ;
+                                                 rdfs:domain <http://data.odeuropa.org/ontology/story/StoryConnection> ;
                                                  rdfs:range <http://data.odeuropa.org/ontology/story/Story> ;
                                                  rdfs:comment "A qualifier indicating in which Story the connection described by the statement is valid."@en ;
                                                  rdfs:label "part of"@en .
@@ -98,7 +91,7 @@ This relation is supposed to be specified by the Part Of property, indicating  w
 
 ###  http://data.odeuropa.org/ontology/story/hasAnchorText
 <http://data.odeuropa.org/ontology/story/hasAnchorText> rdf:type owl:DatatypeProperty ;
-                                                        rdfs:domain rdf:Statement ;
+                                                        rdfs:domain <http://data.odeuropa.org/ontology/story/StoryConnection> ;
                                                         rdfs:range xsd:string ;
                                                         rdfs:label "has anchor text"@en .
 
@@ -117,6 +110,14 @@ This relation is supposed to be specified by the Part Of property, indicating  w
                                                             <http://data.odeuropa.org/ontology/story/StoryElement> .
 
 
+###  http://purl.org/dc/elements/1.1/abstract
+dc:abstract rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:DatatypeProperty .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -131,6 +132,15 @@ This relation is supposed to be specified by the Part Of property, indicating  w
 <http://data.odeuropa.org/ontology/story/Story> rdf:type owl:Class ;
                                                 rdfs:comment "A collection of linked cards"@en ;
                                                 rdfs:label "Story"@en .
+
+
+###  http://data.odeuropa.org/ontology/story/StoryConnection
+<http://data.odeuropa.org/ontology/story/StoryConnection> rdf:type owl:Class ;
+                                                          rdfs:subClassOf rdf:Statement ;
+                                                          rdfs:comment """A triple (subject, predicate, object) composed of:
+- two consecutive Story Elements for a given Story ;
+- a connecting predicate among story:next and story:prev"""@en ;
+                                                          rdfs:label "Story Connection"@en .
 
 
 ###  http://data.odeuropa.org/ontology/story/StoryElement

@@ -38,15 +38,17 @@ Could it be [[blood->Intro 6]]?
 Or maybe the smell of [[rust->Intro 7]]?'
  """.
 
-<< :Introduction story:next :Intro_6 >> ;
+:Introduction story:next :Intro_6 {|
+	a story:StoryConnection ;
 	story:hasAnchorText "blood" ;
 	story:partOf :War ;
-	schema:additionalType "Smells" .
+	schema:additionalType "Smells" |}
 
-<< :Introduction story:next :Intro_7 >> ;
+:Introduction story:next :Intro_7 {|
+	a story:StoryConnection ;
 	story:hasAnchorText "rust" ;
 	story:partOf :War ;
-	schema:additionalType "Smells" .
+	schema:additionalType "Smells" |}
 
 :Intro_6 a :story:StoryElement;
 story:title "Is it blood?";
@@ -63,10 +65,11 @@ How about [[rust->Intro 7]]?
 (text-size:0.5)[^^1^^First World War Veteran interviewed for //In Flanders Fields: Canadian Voices From WWI//, CBC Radio 1964.]'
 """.
 
-<< :Intro_6 story:next :Intro_7 >> ;
+:Intro_6 story:next :Intro_7 {|
+	a story:StoryConnection ;
 	story:hasAnchorText "rust" ;
 	story:partOf :War ;
-	schema:additionalType "Smells" .
+	schema:additionalType "Smells" |} .
 
 :Intro_7 a story:StoryElement;
 story:title "Is it rust?";
@@ -92,10 +95,11 @@ This is the smell of the 'iron harvest'.
 In the wake of the First World War vast deposits of metal military objects, from munitions to barbed wire, were left in the [[fields->Rust 2]] of France and Belgium'
 """.
 
-<< :Intro_7 story:next :rust_2 >> ;
+:Intro_7 story:next :rust_2 {|
+	a story:StoryConnection ;
 	story:hasAnchorText "fields" ;
 	story:partOf :War ;
-	schema:additionalType "Spaces" .
+	schema:additionalType "Spaces" |} .
 
 :rust_2 a story:StoryElement;
 	story:title "Rust";
@@ -114,15 +118,17 @@ What could soldiers' noses detect in the trenches of the [[Somme->Somme 1]] in 1
 (text-size:0.5)[^^1^^Paul Fussell, //The Great War and Modern Memory// (Oxford, 2013), p. 75.]'
 """.
 
-<< :rust_2 story:next :somme_1 >> ;
+:rust_2 story:next :somme_1 {|
+	a story:StoryConnection ;
 	story:hasAnchorText "Somme" ;
 	story:partOf :War ;
-	schema:additionalType "Places" .
+	schema:additionalType "Places" |} .
 
-<< :rust_2 story:next :waterloo_1 >> ;
+:rust_2 story:next :waterloo_1 {|
+	a story:StoryConnection ;
 	story:hasAnchorText "Waterloo" ;
 	story:partOf :War ;
-	schema:additionalType "Places" .
+	schema:additionalType "Places" |} .
 
 
 :somme_1: a story:StoryElement;
@@ -152,10 +158,11 @@ The veteran Tommy Keele, aged 96 at the time the museum opened its new exhibitio
 (text-size:0.5)[^^2^^Graham Heathcote, ‘Museum Offers Sights, Sounds, and Smells of World War I Trench’, https://apnews.com/article/9b9f2bd201ccc751e774ba98f9f18f7b, accessed 02/11/21.]'
 """.
 
-<< :somme_1 story:next :ww1_death >> ;
+:somme_1 story:next :ww1_death {|
+	a story:StoryConnection ;
 	story:hasAnchorText "World War I: The Red Cross in the trenches. Oil painting by Cyrus Cuneo.Wellcome Collection" ;
 	story:partOf :War ;
-	schema:additionalType "Places" .
+	schema:additionalType "Places" |}.
 
 <waterloo_1> a story:StoryElement;
 story:title "Waterloo";
@@ -173,12 +180,14 @@ However, an overwhelming cloud of [[incense->Religion Storyline Placeholder]] wa
 (text-size:0.5)[^^1^^//Madame de Sévigné and Her Contemporaries// (London, 2vols, 1861), II, 310-1]'
 """.
 
-<< :waterloo_1 story:next :seige_smells_1 >> ;
+:waterloo_1 story:next :seige_smells_1 {|
+	a story:StoryConnection ;
 	story:hasAnchorText "even more troubling smells" ;
 	story:partOf :War ;
-	schema:additionalType "Smells" .
+	schema:additionalType "Smells" |}.
 
-<< :waterloo_1 story:next :incense >> ;
+:waterloo_1 story:next :incense {|
+	a story:StoryConnection ;
 	story:hasAnchorText "Incense" ;
 	story:partOf :Religion ;
-	schema:additionalType "Smells" .
+	schema:additionalType "Smells" |}.
