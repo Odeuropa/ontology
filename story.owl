@@ -33,6 +33,21 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://data.odeuropa.org/ontology/story/has_reference
+<http://data.odeuropa.org/ontology/story/has_reference> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf dc:references ;
+                                                        rdfs:domain <http://data.odeuropa.org/ontology/story/StoryElement> ;
+                                                        rdfs:comment "Connect a Story Element with an entity which is referenced in its content"@en ;
+                                                        rdfs:label "has reference"@en .
+
+
+###  http://data.odeuropa.org/ontology/story/linearisationOf
+<http://data.odeuropa.org/ontology/story/linearisationOf> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://data.odeuropa.org/ontology/story/StoryLine> ;
+                                                          rdfs:range <http://data.odeuropa.org/ontology/story/Story> ;
+                                                          rdfs:label "linearisation of" .
+
+
 ###  http://data.odeuropa.org/ontology/story/next
 <http://data.odeuropa.org/ontology/story/next> rdf:type owl:ObjectProperty ;
                                                rdfs:subPropertyOf dbp:next ;
@@ -45,12 +60,26 @@ This relation is supposed to be specified by the Part Of property, indicating  w
                                                rdfs:label "next"@en .
 
 
-###  http://data.odeuropa.org/ontology/story/partOf
-<http://data.odeuropa.org/ontology/story/partOf> rdf:type owl:ObjectProperty ;
-                                                 rdfs:domain <http://data.odeuropa.org/ontology/story/StoryConnection> ;
-                                                 rdfs:range <http://data.odeuropa.org/ontology/story/Story> ;
-                                                 rdfs:comment "A qualifier indicating in which Story the connection described by the statement is valid."@en ;
-                                                 rdfs:label "part of"@en .
+###  http://data.odeuropa.org/ontology/story/partOfStory
+<http://data.odeuropa.org/ontology/story/partOfStory> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf <http://data.odeuropa.org/ontology/story/part_of> ;
+                                                      rdfs:domain <http://data.odeuropa.org/ontology/story/StoryConnection> ;
+                                                      rdfs:range <http://data.odeuropa.org/ontology/story/Story> ;
+                                                      rdfs:comment "A qualifier indicating in which Story the connection described by the statement is valid."@en ;
+                                                      rdfs:label "part of story"@en .
+
+
+###  http://data.odeuropa.org/ontology/story/partOfStoryline
+<http://data.odeuropa.org/ontology/story/partOfStoryline> rdf:type owl:ObjectProperty ;
+                                                          rdfs:subPropertyOf <http://data.odeuropa.org/ontology/story/part_of> ;
+                                                          rdfs:label "part of storyline" .
+
+
+###  http://data.odeuropa.org/ontology/story/part_of
+<http://data.odeuropa.org/ontology/story/part_of> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                  rdfs:domain <http://data.odeuropa.org/ontology/story/StoryConnection> ;
+                                                  rdfs:range <http://data.odeuropa.org/ontology/story/StoryAggregation> .
 
 
 ###  http://data.odeuropa.org/ontology/story/prev
@@ -64,17 +93,9 @@ This relation is supposed to be specified by the Part Of property, indicating  w
                                                rdfs:label "prev"@en .
 
 
-###  http://data.odeuropa.org/ontology/story/references
-<http://data.odeuropa.org/ontology/story/references> rdf:type owl:ObjectProperty ;
-                                                     rdfs:subPropertyOf dc:references ;
-                                                     rdfs:domain <http://data.odeuropa.org/ontology/story/StoryElement> ;
-                                                     rdfs:comment "Connect a Story Element with an entity which is referenced in its content"@en ;
-                                                     rdfs:label "has references"@en .
-
-
 ###  http://data.odeuropa.org/ontology/story/start
 <http://data.odeuropa.org/ontology/story/start> rdf:type owl:ObjectProperty ;
-                                                rdfs:domain <http://data.odeuropa.org/ontology/story/Story> ;
+                                                rdfs:domain <http://data.odeuropa.org/ontology/story/StoryAggregation> ;
                                                 rdfs:range <http://data.odeuropa.org/ontology/story/StoryElement> ;
                                                 rdfs:comment "Connect the Story with the first Story Element, the entry point of the whole story"@en ;
                                                 rdfs:label "start"@en .
@@ -89,11 +110,11 @@ This relation is supposed to be specified by the Part Of property, indicating  w
                                                   rdfs:domain <http://data.odeuropa.org/ontology/story/Story> .
 
 
-###  http://data.odeuropa.org/ontology/story/hasAnchorText
-<http://data.odeuropa.org/ontology/story/hasAnchorText> rdf:type owl:DatatypeProperty ;
+###  http://data.odeuropa.org/ontology/story/hasTextAnchor
+<http://data.odeuropa.org/ontology/story/hasTextAnchor> rdf:type owl:DatatypeProperty ;
                                                         rdfs:domain <http://data.odeuropa.org/ontology/story/StoryConnection> ;
                                                         rdfs:range xsd:string ;
-                                                        rdfs:label "has anchor text"@en .
+                                                        rdfs:label "has text anchor"@en .
 
 
 ###  http://data.odeuropa.org/ontology/story/summary
@@ -128,10 +149,25 @@ dc:title rdf:type owl:DatatypeProperty .
                                                               rdfs:label "Encyclopedia Article"@en .
 
 
+###  http://data.odeuropa.org/ontology/story/ExternalConnection
+<http://data.odeuropa.org/ontology/story/ExternalConnection> rdf:type owl:Class ;
+                                                             rdfs:subClassOf rdf:Statement ;
+                                                             rdfs:comment "A connection with an element outside the story (e.g. an Encyclopedia Article, a graph element, a webpage)."@en ;
+                                                             rdfs:label "External Connection"@en .
+
+
 ###  http://data.odeuropa.org/ontology/story/Story
 <http://data.odeuropa.org/ontology/story/Story> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://data.odeuropa.org/ontology/story/StoryAggregation> ;
                                                 rdfs:comment "A collection of linked cards"@en ;
                                                 rdfs:label "Story"@en .
+
+
+###  http://data.odeuropa.org/ontology/story/StoryAggregation
+<http://data.odeuropa.org/ontology/story/StoryAggregation> rdf:type owl:Class ;
+                                                           rdfs:comment "A set of connection of Story Element."@en ,
+                                                                        "This class is not meant to be used. Use instead Story or StoryLine"@en ;
+                                                           rdfs:label "Story Aggregation"@en .
 
 
 ###  http://data.odeuropa.org/ontology/story/StoryConnection
@@ -149,8 +185,11 @@ dc:title rdf:type owl:DatatypeProperty .
                                                        rdfs:label "Story Element"@en .
 
 
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
-rdf:Statement rdf:type owl:Class .
+###  http://data.odeuropa.org/ontology/story/StoryLine
+<http://data.odeuropa.org/ontology/story/StoryLine> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://data.odeuropa.org/ontology/story/StoryAggregation> ;
+                                                    rdfs:comment "One of the possibile path to follow inside a Story, consisting of a series of ordered Story elements"@en ;
+                                                    rdfs:label "StoryLine"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
