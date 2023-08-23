@@ -73,7 +73,7 @@ This relation is supposed to be further detailed within the class Story Connecti
 
 ###  http://data.odeuropa.org/ontology/story#isConnectedTo
 <http://data.odeuropa.org/ontology/story#isConnectedTo> rdf:type rdf:Property ;
-                                                owl:inverseOf <http://data.odeuropa.org/ontology/story#connectsTo>
+                                                owl:inverseOf <http://data.odeuropa.org/ontology/story#connectsTo> ;
                                                rdfs:subPropertyOf dbp:prev ;
                                                rdfs:domain <http://data.odeuropa.org/ontology/story#StoryElement> ;
                                                rdfs:range <http://data.odeuropa.org/ontology/story#StoryElement> ;
