@@ -176,7 +176,7 @@ The veteran Tommy Keele, aged 96 at the time the museum opened its new exhibitio
 	story:partOfStory :War ;
 	schema:additionalType "Places" |}.
 
-<waterloo_1> a story:StoryElement;
+:waterloo_1 a story:StoryElement;
 story:title "Waterloo";
 	story:summary "the site of the battle of Waterloo";
 	dc:created "2023-03-22"^^xsd:date;
